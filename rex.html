@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reminder App</title>
+  
+  <link rel="stylesheet" href="rex.css" />
+</head>
+
+<body>
+  <div class="container-rex">
+    <div class="nav">
+      <button><a href="index.html">Home</a></button>
+      <button><a href="busix.html">Business</a></button>
+    </div>
+    <div class="slide-bar">
+      <h2>Rex</h2>
+      <button id="btn" onclick="loadSection('dash')">Dashboard</button>
+      <button id="btn" onclick="loadSection('active')">Active</button>
+      <button id="btn" onclick="loadSection('ask')">Ask here</button>
+    </div>
+
+
+  
+      <div id="app">
+        <div id="Dashboard-section" class="section hidden">
+          <div class="main-content">
+            <div class="header">
+              <h1>Welcome to the Dashboard</h1>
+            </div>
+            <div class="card-container">
+              <div class="card">
+                <h3>Total Users</h3>
+                <p>1,234</p>
+              </div>
+              <div class="card">
+                <h3>Active Sessions</h3>
+                <p>567</p>
+              </div>
+              <div class="card">
+                <h3>Revenue</h3>
+                <p>$12,345</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div id="active-section" class="section hidden">
+          <div class="main-content2">
+            <div class="header">
+              <h1>Welcome to Active</h1>
+            </div>
+            <div class="card-container2">
+              <div class="card1">
+                <h3>Total Users</h3>
+                <p>1,234</p>
+              </div>
+              <div class="card1">
+                <h3>Active Sessions</h3>
+                <p>567</p>
+              </div>
+              <div class="card1">
+                <h3>Revenue</h3>
+                <p>$12,345</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div id="FQA-section" class="section hidden">
+           <div class="main-content">
+            <div class="header">
+              <h1>Welcome to the FQA Section</h1>
+            </div>
+            <div class="card-container">
+              <div class="card">
+                <h3>Total Users</h3>
+                <p>1,234</p>
+              </div>
+              <div class="card">
+                <h3>Active Sessions</h3>
+                <p>567</p>
+              </div>
+              <div class="card">
+                <h3>Revenue</h3>
+                <p>$12,345</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+
+
+    <script src="rexJ.js"></script>
+</body>
+
+</html>

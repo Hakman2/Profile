@@ -1,0 +1,453 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Nunito, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol, Noto Color Emoji;
+}
+
+:root {
+  /* color-1(#C73E1D)
+   * color-2(#2F352B)
+   * color-3(#1A1A1A)
+   */
+  --color-1: hsla(12, 75%, 45%, 1);
+  --color-2: hsla(96, 10%, 19%, 1);
+  --color-3: hsla(0, 0%, 10%, 1);
+
+  /* theme color variations
+   */
+  --color-1-lightest: hsla(12, 75%, 75%, 1);
+  --color-1-lighter: hsla(12, 75%, 65%, 1);
+  --color-1-light: hsla(12, 75%, 55%, 1);
+  --color-1-dark: hsla(12, 75%, 35%, 1);
+  --color-1-darker: hsla(12, 75%, 25%, 1);
+  --color-1-darkest: hsla(12, 75%, 15%, 1);
+
+  --color-2-lightest: hsla(96, 10%, 49%, 1);
+  --color-2-lighter: hsla(96, 10%, 39%, 1);
+  --color-2-light: hsla(96, 10%, 29%, 1);
+  --color-2-dark: hsla(96, 10%, 10%, 1);
+  --color-2-darker: hsla(96, 10%, 1%, 1);
+
+  --color-3-light: hsla(0, 0%, 16%, 1);
+  --color-3-dark: hsla(0, 0%, 8%, 1);
+
+  /* feedback colors
+   * color-error(#ffd1d2), color-success(#c8e675), 
+   * color-info(#d7ecfb), color-notice(#fff099)
+   */
+  --color-error: hsla(359, 100%, 91%, 1);
+  --color-success: hsla(76, 69%, 68%, 1);
+  --color-info: hsla(205, 82%, 91%, 1);
+  --color-notice: hsla(51, 100%, 80%, 1);
+  --color-error-content: hsla(359, 50%, 50%, 1);
+  --color-success-content: hsla(76, 29%, 28%, 1);
+  --color-info-content: hsla(205, 32%, 31%, 1);
+  --color-notice-content: hsla(51, 30%, 30%, 1);
+
+  /* neutrals
+   * generated using 
+   * Tint & Shade Generator 
+   * (https://maketintsandshades.com/)
+   */
+  --color-black: #000000;
+  --color-gray-19: #181818;
+  --color-gray-18: #2f302f;
+  --color-gray-17: #474747;
+  --color-gray-16: #5e5f5e;
+  --color-gray-15: #767776;
+  --color-gray-14: #8e8f8e;
+  --color-gray-13: #a5a7a5;
+  --color-gray-12: #bdbebd;
+  --color-gray-11: #d4d6d4;
+  --color-gray-10: #eceeec;
+  --color-gray-9: #eef0ee;
+  --color-gray-8: #f0f1f0;
+  --color-gray-7: #f2f3f2;
+  --color-gray-6: #f4f5f4;
+  --color-gray-5: #f6f7f6;
+  --color-gray-4: #f7f8f7;
+  --color-gray-3: #f9faf9;
+  --color-gray-2: #fbfcfb;
+  --color-gray-1: #fbfcfb;
+  --color-white: #ffffff;
+
+  /* text
+   */
+  --color-text: var(--color-gray-19);
+  --color-text-dark: var(--color-3-dark);
+  --color-text-light: var(--color-gray-15);
+  --color-placeholder: var(--color-gray-13);
+
+  /* link
+   */
+  --color-link: var(--color-1);
+  --color-link-hover: var(--color-2-lighter);
+  --color-link-active: var(--color-2-lighter);
+
+  /* buttons
+   */
+  --color-btn: var(--color-gray-10);
+  --color-btn-text: var(--color-text);
+  --color-btn-hover: var(--color-gray-11);
+  --color-btn-hover-text: var(--color-text);
+  --color-btn-primary: var(--color-1);
+  --color-btn-primary-text: var(--color-white);
+  --color-btn-primary-hover: var(--color-1-light);
+  --color-btn-primary-hover-text: var(--color-white);
+  --color-btn-stroke: var(--color-text-dark);
+  --color-btn-stroke-text: var(--color-text-dark);
+  --color-btn-stroke-hover: var(--color-text-dark);
+  --color-btn-stroke-hover-text: var(--color-white);
+
+  /* preloader
+   */
+  --color-preloader-bg: var(--color-gray-10);
+  --color-loader: var(--color-3);
+  --color-loader-light: var(--color-gray-14);
+
+  /* others
+   */
+  --color-body-bg: var(--color-gray-1);
+  --color-border: rgba(0, 0, 0, .1);
+  --border-radius: 5px;
+}
+
+/* ===================================================================
+ * # PRELOADER
+ * 
+ * 
+ * -------------------------------------------------------------------
+ * - markup:
+ *
+ * <div id="preloader">
+ *     <div id="loader" class="dots-fade">
+ *         <div></div>
+ *         <div></div>
+ *         <div></div>
+ *     </div>
+ * </div>
+ *
+ * - loader class:
+ * <dots-fade | dots-jump | dots-pulse>
+ *
+ * ------------------------------------------------------------------- */
+#preloader {
+  position: fixed;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-preloader-bg);
+  z-index: 500;
+  height: 100vh;
+  width: 100%;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.no-js #preloader {
+  display: none;
+}
+
+#loader {
+  position: relative;
+  width: 4px;
+  height: 4px;
+  padding: 0;
+  display: inline-block;
+}
+
+#loader>div {
+  content: "";
+  background: var(--color-loader);
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+}
+
+#loader>div:nth-of-type(1) {
+  left: 15px;
+}
+
+#loader>div:nth-of-type(3) {
+  left: -15px;
+}
+
+/* dots jump */
+.dots-jump>div {
+  animation: dots-jump 1.2s infinite ease;
+  animation-delay: 0.2s;
+}
+
+.dots-jump>div:nth-of-type(1) {
+  animation-delay: 0.4s;
+}
+
+.dots-jump>div:nth-of-type(3) {
+  animation-delay: 0s;
+}
+
+@keyframes dots-jump {
+  0% {
+    top: 0;
+  }
+
+  40% {
+    top: -6px;
+  }
+
+  80% {
+    top: 0;
+  }
+}
+
+/* dots fade */
+.dots-fade>div {
+  animation: dots-fade 1.6s infinite ease;
+  animation-delay: 0.4s;
+}
+
+.dots-fade>div:nth-of-type(1) {
+  animation-delay: 0.8s;
+}
+
+.dots-fade>div:nth-of-type(3) {
+  animation-delay: 0s;
+}
+
+@keyframes dots-fade {
+  0% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0.2;
+  }
+
+  80% {
+    opacity: 1;
+  }
+}
+
+/* dots pulse */
+.dots-pulse>div {
+  animation: dots-pulse 1.2s infinite ease;
+  animation-delay: 0.2s;
+}
+
+.dots-pulse>div:nth-of-type(1) {
+  animation-delay: 0.4s;
+}
+
+.dots-pulse>div:nth-of-type(3) {
+  animation-delay: 0s;
+}
+
+@keyframes dots-pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1.3);
+  }
+
+  80% {
+    transform: scale(1);
+  }
+}
+
+/* ------------------------------------------------------------------- 
+* ## page loaded
+* ------------------------------------------------------------------- */
+.ss-loaded #preloader {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.6s 0.9s ease-in-out;
+}
+
+.ss-loaded #preloader #loader {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 250px);
+  grid-template-rows: auto;
+  background-color: whitesmoke;
+  gap: 20px;
+  height: 20%;
+  justify-content: center;
+  grid-template-areas:
+    "nav    nav   nav   nav"
+    "slide  main    main  ."
+    "slide  main    main  ."
+    "footer footer  footer  footer";
+}
+
+.container .nav {
+  grid-area: nav;
+  background-color: rgba(0, 0, 0, 0.692);
+  box-shadow: 10px 8px 10px rgba(10, 5, 5, 0.1);
+  opacity: 0.9;
+  border-radius: 5px;
+  flex-direction: row;
+}
+
+.nav {
+  margin-top: 20px;
+  display: flex;
+  gap: 30em;
+  height: 70px;
+}
+
+.nav .badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: #f8f8f8;
+}
+
+.nav .other {
+  gap: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav .other a {
+  text-decoration: none;
+  color: #f8f8f8;
+  font-size: 12pt;
+  margin-right: 30px;
+  border-right: 1px solid whitesmoke;
+  z-index: 2;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+.nav .other a:is(:hover, :focus) {
+  transition: 0.5s;
+  padding: 10px;
+  text-decoration: underline;
+}
+
+.container .slide-bar {
+  grid-area: slide;
+  background-color: rgba(73, 72, 72, 0.24);
+  width: 200px;
+  display: block;
+}
+
+#btn {
+  background-color: #4e4b4b00;
+  color: #080808;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  width: 100%;
+  padding-top: 30px;
+  margin-top: 50px;
+}
+
+#btn:is(:hover, :focus) {
+  background-color: whitesmoke;
+  filter: brightness(0.8);
+  transition: 0.5s;
+  padding-bottom: 10px;
+  text-decoration: underline;
+}
+
+.container .main {
+  grid-area: main;
+  height: auto;
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
+  padding-right: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #cdd1d070;
+}
+
+.main .mainCase {
+  display: grid;
+  grid-template-columns: repeat(5, 100px);
+  grid-template-rows: repeat(auto-fill, 60px);
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding-bottom: 30px;
+  grid-template-areas:
+    ".  . . . . ."
+    ".  remind remind business  business  ."
+    ".  remind remind business  business  ."
+    ".  remind remind business  business  ."
+    ".  . chat chat .  .  "
+    ".  . chat chat .  .  "
+    ".  . . . . .";
+}
+
+.container .main .mainCase .reminderCase {
+  grid-area: remind;
+  max-height: 900px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3498DB;
+  color: white;
+  padding: 10px 20px;
+  width: 50rem;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  justify-content: center;
+}
+
+.container .main .mainCase .businessCase {
+  grid-area: business;
+  max-height: 900px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+.container .main .mainCase .chatCase {
+  grid-area: chat;
+  max-height: 900px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-left: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+.container .footer {
+  grid-area: footer;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: last baseline;
+  border-right: 1px solid #fff;
+}
