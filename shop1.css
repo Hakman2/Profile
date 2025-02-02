@@ -67,6 +67,7 @@ body .body{
     gap: 20px;
     padding: 20px;
     justify-content: space-between;
+    margin-top: -8em;
 }
 
 .card-container {
