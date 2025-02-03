@@ -3,6 +3,8 @@ function loadSection(section) {
   document.querySelectorAll(".section").forEach((sec) => {
     sec.classList.add("hidden");
     sec.classList.remove("visible");
+    document.querySelector(".default").classList.add("hidden")
+    document.querySelector(".default").classList.remove("visible")
   });
 
   // Show the selected section
@@ -15,5 +17,8 @@ function loadSection(section) {
   } else if (section === "ask") {
     document.getElementById("FQA-section").classList.remove("hidden");
     document.getElementById("FQA-section").classList.add("visible");
+  }else{
+    document.querySelector(".default").classList.remove("hidden")
+    document.querySelector(".default").classList.add("hidden")
   }
 }
