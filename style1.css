@@ -423,10 +423,9 @@ header {
 header h1 {
   justify-content: center;
 }
-
-
-
-
+h1,h2{
+  color: #ffffffb9;
+}
 
 .container .main .mainCase .businessCase {
   grid-area: business;
