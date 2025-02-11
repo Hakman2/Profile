@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Hover & Click Popup</title>
+    <title>Chat</title>
     <style>
       /* Image Container */
 .image-container {
@@ -81,7 +81,7 @@
 </head>
 <body>
 
-    <div class="image-container">
+    <!-- <div class="image-container">
         <img src="/images/intro-bg.jpg" alt="White Knit Cap" class="image" id="image">
         
         <div class="entry__info">
@@ -90,7 +90,7 @@
         </div>
     </div>
 
-    <!-- Lightbox (Hidden Initially) -->
+    <!-- Lightbox (Hidden Initially) 
     <div class="lightbox" id="lightbox">
         <div class="lightbox-content">
             <span class="close">&times;</span>
@@ -104,32 +104,40 @@
                 </p>
             </div>
         </div>
-    </div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const image = document.getElementById("image");
-        const lightbox = document.getElementById("lightbox");
-        const close = document.querySelector(".close");
+    </div> -->
     
-        // Show lightbox on click
-        image.addEventListener("click", function () {
-            lightbox.style.display = "flex";
-        });
+     <script>
+    // <--
+    //   document.addEventListener("DOMContentLoaded", function () {
+    //     const image = document.getElementById("image");
+    //     const lightbox = document.getElementById("lightbox");
+    //     const close = document.querySelector(".close");
     
-        // Close lightbox on click
-        close.addEventListener("click", function () {
-            lightbox.style.display = "none";
-        });
+    //     // Show lightbox on click
+    //     image.addEventListener("click", function () {
+    //         lightbox.style.display = "flex";
+    //     });
     
-        // Close lightbox if clicked outside content
-        lightbox.addEventListener("click", function (e) {
-            if (e.target === lightbox) {
-                lightbox.style.display = "none";
-            }
-        });
-    });
+    //     // Close lightbox on click
+    //     close.addEventListener("click", function () {
+    //         lightbox.style.display = "none";
+    //     });
     
+    //     // Close lightbox if clicked outside content
+    //     lightbox.addEventListener("click", function (e) {
+    //         if (e.target === lightbox) {
+    //             lightbox.style.display = "none";
+    //         }
+    //     });
+    // });
+    //  --> 
+     let loadUnderMaintainance = document.querySelector("body");
+     loadUnderMaintainance.innerHTML = `
+     <div class="maintainance"> 
+     <h1>Under Maintainance</h1>
+      <p>Sorry for the inconvenience, we are currently under maintainance.
+      Please check back later</p><button><a href="index.html">Home</a></<button> </div>`;
+     
     </script>
 
 </body>
