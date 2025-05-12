@@ -290,7 +290,7 @@ body {
   height: 20%;
   justify-content: center;
   grid-template-areas:
-    "nav    nav   nav   nav"
+   
     "empty main    main  ."
     "empty main    main  ."
     "footer footer  footer  footer";
