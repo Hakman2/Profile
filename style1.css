@@ -291,8 +291,8 @@ body {
   justify-content: center;
   grid-template-areas:
     "nav    nav   nav   nav"
-    "slide  main    main  ."
-    "slide  main    main  ."
+    "empty main    main  ."
+    "empty main    main  ."
     "footer footer  footer  footer";
 }
 
@@ -373,44 +373,6 @@ body {
   text-decoration: underline;
 }
 
-.container .main {
-  grid-area: main;
-  height: auto;
-  border-bottom: 1px solid #fff;
-  border-right: 1px solid #fff;
-  padding-right: 50px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  background-color: #cdd1d070;
-}
-
-.main .mainCase {
-  display: grid;
-  grid-template-columns: repeat(5, 100px);
-  grid-template-rows: repeat(auto-fill, 60px);
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  padding-bottom: 30px;
-  grid-template-areas:
-    ".  . . . . ."
-    ".  remind remind ."
-    ".  remind remind ."
-    ".  remind remind ."
-    "business  business"
-    "business  business"
-    "business  business"
-    ".  . . . . .";
-}
-
-.container .main .mainCase .reminderCase {
-  grid-area: remind;
-  max-height: 900px;
-  width: 100%;
-  box-sizing: border-box;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s;
-}
 
 header {
   display: flex;
