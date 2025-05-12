@@ -349,7 +349,7 @@ body {
 .container .slide-bar {
   grid-area: slide;
   background-color: rgba(73, 72, 72, 0.24);
-  width: 200px;
+  width: 50px;
   display: block;
 }
 
@@ -393,11 +393,12 @@ body {
   padding-bottom: 30px;
   grid-template-areas:
     ".  . . . . ."
-    ".  remind remind business  business  ."
-    ".  remind remind business  business  ."
-    ".  remind remind business  business  ."
-    ".  . chat chat .  .  "
-    ".  . chat chat .  .  "
+    ".  remind remind ."
+    ".  remind remind ."
+    ".  remind remind ."
+    "business  business"
+    "business  business"
+    "business  business"
     ".  . . . . .";
 }
 
