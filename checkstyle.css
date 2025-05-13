@@ -3927,6 +3927,33 @@ td:last-child {
     color      : var(--color-text-light) !important;
 }
 
+/* About Section Styling */
+.about {
+  padding: var(--vspace-4) var(--gutter);
+  background-color: var(--color-gray-10);
+  color: var(--color-text-dark);
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-title {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  margin-bottom: var(--vspace-2);
+  color: var(--color-1);
+}
+
+.about-text {
+  font-size: var(--text-md);
+  line-height: var(--vspace-1_5);
+  margin-bottom: var(--vspace-2);
+  color: var(--color-text-light);
+}
+
 /* ------------------------------------------------------------------- 
  * responsive:
  * about
