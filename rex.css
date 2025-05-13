@@ -259,6 +259,7 @@ section {
 #FQA-section {
   margin-top: 0;
   display: flex;
+  color: #333;
 }
 
 #active-section {
