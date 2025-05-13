@@ -285,68 +285,49 @@ body {
   justify-content: center;
 }
 
-/* .container {
-  display: grid;
-  grid-template-columns: repeat(2, 250px);
-  grid-template-rows: auto;
-  background-color: whitesmoke;
-  gap: 20px;
-  height: 20%;
-  justify-content: center;
-  grid-template-areas:
-    "nav    nav   nav   nav"
-    "main main    main  main"
-    ". . . ."
-    "footer footer  footer  footer";
-} */
-
-.container .nav {
-  grid-area: nav;
-  background-color: rgba(0, 0, 0, 0.692);
-  box-shadow: 10px 8px 10px rgba(10, 5, 5, 0.1);
-  opacity: 0.9;
-  top: 0;
-  flex-direction: row;
-}
-
+/* Navigation Bar */
 .nav {
-  display: flex;
-  gap: 30em;
   height: 70px;
+  width: 100%;
+  position: fixed; /* Keep the navbar fixed at the top */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black background */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+  color: white;
 }
 
-.nav .badge {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  color: #f8f8f8;
-  margin-left: 5em;
-  font-size: 12pt;
-  font-weight: 600;
+.nav .badge h1 {
+  font-size: 1.8rem;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .nav .other {
-  gap: 20px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  gap: 15px;
 }
 
 .nav .other a {
   text-decoration: none;
-  color: #f8f8f8;
-  font-size: 12pt;
-  margin-right: 30px;
-  z-index: 1;
-  flex-wrap: wrap;
-  flex-grow: 1;
-  /* margin-right: 10em; */
+  color: white;
+  font-size: 1rem;
+  padding: 8px 15px;
+  border: 1px solid white;
+  border-radius: 20px;
+  transition: all 0.3s ease;
 }
 
-.nav .other a:is(:hover, :focus) {
-  transition: 0.5s;
-  text-decoration: underline;
+.nav .other a:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.1); /* Slight zoom effect */
 }
 
 .container .slide-bar {
@@ -538,31 +519,29 @@ h1,h2{
 
 @media screen and (max-width: 768px) {
   .nav {
+    flex-direction: column;
     height: auto;
+    padding: 10px;
   }
 
   .nav .badge h1 {
     font-size: 1.5rem;
-    margin-left: 0;
+  }
+
+  .nav .other {
+    flex-direction: column;
+    gap: 10px;
   }
 
   .nav .other a {
-    font-size: 1rem;
-    margin-right: 0;
-  }
-
-  .main {
-    flex-direction: column;
-  }
-
-  .footer {
-    text-align: center;
+    font-size: 0.9rem;
+    padding: 5px 10px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .nav {
-    gap: 0.5em;
+    padding: 5px;
   }
 
   .nav .badge h1 {
@@ -570,14 +549,7 @@ h1,h2{
   }
 
   .nav .other a {
-    font-size: 0.9rem;
-  }
-
-  .main {
-    padding: 5px;
-  }
-
-  .footer {
     font-size: 0.8rem;
+    padding: 5px 8px;
   }
 }
