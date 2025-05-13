@@ -54,13 +54,16 @@ body {
   /* Sidebar */
   .slide-bar {
     width: 200px;
-    background-color: #33333370;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    color: white;
+    height: 100vh;
   }
   
   .slide-bar h2 {
     margin-bottom: 20px;
+    text-align: center;
   }
   
   .slide-bar button {
@@ -68,16 +71,16 @@ body {
     width: 100%;
     margin-bottom: 10px;
     padding: 10px;
-    background-color: #e0e4e29f;
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
   }
   
   .slide-bar button:hover {
-    background-color: #e0e4e29f;
+    background-color: #0056b3; /* Darker blue on hover */
   }
   
   /* Main Content */
@@ -172,12 +175,37 @@ section {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
 }
 
+<<<<<<< HEAD
+.nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add text shadow */
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links button {
+=======
 .nav button {
+>>>>>>> 872a841862ef04bc517ea0394ff14d4c0d08f5b6
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
 
+<<<<<<< HEAD
+.nav-links button a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+=======
 .nav button a {
   text-decoration: none;
   color: white;
@@ -185,19 +213,67 @@ section {
   padding: 10px 20px;
   border-radius: 5px;
   transition: background-color 0.3s ease, transform 0.3s ease;
+>>>>>>> 872a841862ef04bc517ea0394ff14d4c0d08f5b6
 }
 
+<<<<<<< HEAD
+.nav-links button a:hover {
+  background-color: #007bff; /* Blue background on hover */
+  color: white;
+  transform: scale(1.1); /* Slight zoom effect */
+}
+=======
 .nav button a:hover {
   background-color: #007bff; /* Blue background on hover */
   color: white;
   transform: scale(1.1); /* Slight zoom effect */
 }
+>>>>>>> 872a841862ef04bc517ea0394ff14d4c0d08f5b6
 
+<<<<<<< HEAD
+/* Sidebar Styling */
+.slide-bar {
+  width: 200px;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  color: white;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  transition: transform 0.3s ease;
+}
+=======
 .nav .logo {
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add text shadow */
+}
+>>>>>>> 872a841862ef04bc517ea0394ff14d4c0d08f5b6
+
+.slide-bar h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.slide-bar button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slide-bar button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
 }
 
 .slide-bar {
@@ -346,6 +422,68 @@ section {
 .card1 h3 {
   margin: 0 0 10px 0;
 }
+<<<<<<< HEAD
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .nav .logo {
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .slide-bar {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .slide-bar h2 {
+    display: none; /* Hide the sidebar title */
+  }
+
+  .slide-bar button {
+    width: auto;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nav {
+    padding: 5px 10px;
+  }
+
+  .nav .logo {
+    font-size: 1rem;
+  }
+
+  .nav-links button a {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+
+  .slide-bar button {
+    padding: 6px;
+    font-size: 0.8rem;
+  }
+}
+=======
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
@@ -379,3 +517,4 @@ section {
     padding: 5px 10px;
   }
 }
+>>>>>>> 872a841862ef04bc517ea0394ff14d4c0d08f5b6
