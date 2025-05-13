@@ -323,7 +323,7 @@ body {
 }
 
 .nav .other {
-  gap: 30px;
+  gap: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
