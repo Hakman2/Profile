@@ -285,7 +285,7 @@ body {
   justify-content: center;
 }
 
-.container {
+/* .container {
   display: grid;
   grid-template-columns: repeat(2, 250px);
   grid-template-rows: auto;
@@ -298,7 +298,7 @@ body {
     "main main    main  main"
     ". . . ."
     "footer footer  footer  footer";
-}
+} */
 
 .container .nav {
   grid-area: nav;
