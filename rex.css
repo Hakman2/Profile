@@ -142,7 +142,7 @@ body {
 }
 
 section {
-  margin-top: 20px;
+  margin-top: 50px;
   transition: opacity 0.3s ease;
 }
 
@@ -245,7 +245,7 @@ section {
   height: auto;     /* Full height of the container */
   display: none;    /* Default state is hidden */
   position: absolute; /* Ensures sections stack on top of each other */
-  top: 5em;
+  top: 10em;
   left: 16em;
 }
 
