@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const searchInput = document.querySelector(".search-input");
   const shopCards = document.querySelectorAll(".border-render");
 
+  // Handle search form submission
   searchForm.addEventListener("submit", function (e) {
     e.preventDefault(); // Prevent form submission
 
