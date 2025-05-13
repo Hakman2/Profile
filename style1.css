@@ -295,7 +295,7 @@ body {
   justify-content: center;
   grid-template-areas:
     "nav    nav   nav   nav"
-    ". main    main  ."
+    "main main    main  main"
     ". . . ."
     "footer footer  footer  footer";
 }
