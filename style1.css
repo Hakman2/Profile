@@ -448,6 +448,24 @@ h1,h2{
   object-fit: cover; /* Ensure the image covers the container */
   object-position: center; /* Center the image */
 }
+.collection-cover__background-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+.collection-cover__background-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
 .cover-detail {
   z-index: 1;
 }
