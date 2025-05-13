@@ -220,7 +220,40 @@ img {
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* For screens smaller than 1200px */
+/* Widget container for buttons */
+.widget {
+  display: flex;
+  justify-content: center; /* Center the buttons */
+  align-items: center; /* Align buttons vertically */
+  gap: 15px; /* Space between buttons */
+  flex-wrap: nowrap; /* Prevent buttons from wrapping */
+  padding: 10px;
+  background-color: rgba(247, 239, 239, 0.692); /* Optional background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+/* Buttons inside the widget */
+.widget button {
+  background-color: transparent;
+  border: 1px solid #272525;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.widget button a {
+  text-decoration: none;
+  color: #272525;
+}
+
+.widget button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Responsive adjustments for smaller screens */
 @media screen and (max-width: 1200px) {
   .nav {
     flex-direction: column;
@@ -246,7 +279,6 @@ img {
   }
 }
 
-/* For screens smaller than 768px */
 @media screen and (max-width: 768px) {
   .nav {
     flex-direction: column;
@@ -279,6 +311,15 @@ img {
   .busix-container .border-render img {
     width: 100px;
   }
+
+  .widget {
+    gap: 10px; /* Reduce spacing */
+  }
+
+  .widget button {
+    padding: 8px 15px; /* Adjust padding */
+    font-size: 0.9rem; /* Adjust font size */
+  }
 }
 
 /* For screens smaller than 480px */
@@ -308,5 +349,15 @@ img {
   .busix-container .border-render {
     width: 100%;
     padding: 10px;
+  }
+
+  .widget {
+    flex-wrap: wrap; /* Allow buttons to wrap on very small screens */
+    gap: 5px; /* Reduce spacing further */
+  }
+
+  .widget button {
+    padding: 5px 10px; /* Further adjust padding */
+    font-size: 0.8rem; /* Further reduce font size */
   }
 }
