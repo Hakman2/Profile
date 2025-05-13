@@ -132,13 +132,16 @@ body {
   flex: 1;
   display: flex;
   justify-content: flex-end;
-  gap: 15px;
+  gap: 15px; /* Space between buttons */
+  flex-wrap: nowrap; /* Prevent buttons from wrapping to the next line */
 }
 
 .nav .other a {
   padding: 10px 15px;
   transition: color 0.3s, transform 0.3s;
   color: black;
+  text-decoration: none; /* Remove underline */
+  white-space: nowrap; /* Prevent text from wrapping */
 }
 
 .nav .other a:hover {
@@ -257,6 +260,16 @@ img {
     margin-top: 10px;
   }
 
+  .nav .other {
+    justify-content: center; /* Center the buttons */
+    gap: 10px; /* Adjust spacing for smaller screens */
+  }
+
+  .nav .other a {
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+    padding: 8px 12px; /* Adjust padding for smaller screens */
+  }
+
   .busix-container .border-render {
     flex-direction: column;
     align-items: center;
@@ -278,8 +291,14 @@ img {
     font-size: 1.2rem;
   }
 
+  .nav .other {
+    justify-content: center;
+    gap: 5px; /* Reduce spacing further for very small screens */
+  }
+
   .nav .other a {
-    font-size: 0.9rem;
+    font-size: 0.8rem; /* Further reduce font size */
+    padding: 5px 10px; /* Further adjust padding */
   }
 
   .busix-container {
@@ -291,7 +310,8 @@ img {
     padding: 10px;
   }
 
-  .footer {
-    font-size: 0.8rem;
-  }
-}
+
+
+
+
+}  }    font-size: 0.8rem;  .footer {}
