@@ -357,7 +357,6 @@ body {
   text-decoration: underline;
 }
 
-
 header {
   display: flex;
   justify-content: center;
@@ -370,11 +369,12 @@ header {
 header h1 {
   justify-content: center;
 }
-h1,h2{
+
+h1, h2 {
   color: #ffffffb9;
 }
 
-.color{
+.color {
   color: #2be286b7;
 }
 
@@ -405,6 +405,7 @@ h1,h2{
   align-items: last baseline;
   border-right: 1px solid #fff; */
 }
+
 #collection-cover {
   position: relative;
   width: 100%; /* Ensure the container spans the full width */
@@ -445,6 +446,7 @@ h1,h2{
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
 }
+
 .collection-cover__background-image::after {
   content: "";
   position: absolute;
@@ -454,6 +456,7 @@ h1,h2{
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
 }
+
 .cover-detail {
   z-index: 1;
 }
@@ -505,6 +508,60 @@ h1,h2{
   text-decoration: underline;
 }
 
+/* Main Section Styling */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 20px; /* Add spacing around the content */
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  color: white; /* Text color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+  margin: 20px auto; /* Center the section */
+  max-width: 1200px; /* Limit the width */
+}
+
+.main h1 {
+  font-size: 2.5rem; /* Larger font size for the title */
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add text shadow */
+}
+
+.main h4 {
+  font-size: 1.2rem; /* Subtitle font size */
+  margin-bottom: 20px;
+  color: #f1f1f1; /* Slightly lighter text color */
+}
+
+.main button {
+  background-color: #ff5722; /* Button background color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.main button:hover {
+  background-color: #e64a19; /* Darker button color on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.main img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Rounded corners for the image */
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow to the image */
+}
+
 @media screen and (max-width: 1200px) {
   .nav {
     flex-direction: column;
@@ -541,6 +598,23 @@ h1,h2{
     font-size: 0.9rem;
     padding: 5px 10px;
   }
+
+  .main {
+    padding: 30px 15px;
+  }
+
+  .main h1 {
+    font-size: 2rem;
+  }
+
+  .main h4 {
+    font-size: 1rem;
+  }
+
+  .main button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -555,5 +629,22 @@ h1,h2{
   .nav .other a {
     font-size: 0.8rem;
     padding: 5px 8px;
+  }
+
+  .main {
+    padding: 20px 10px;
+  }
+
+  .main h1 {
+    font-size: 1.8rem;
+  }
+
+  .main h4 {
+    font-size: 0.9rem;
+  }
+
+  .main button {
+    font-size: 0.8rem;
+    padding: 6px 10px;
   }
 }
