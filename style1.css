@@ -440,12 +440,14 @@ h1,h2{
   width: 100%;
   height: 100%;
   z-index: -1;
+  overflow: hidden;
 }
 
 .collection-cover__background-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Ensures the image covers the entire container */
+  object-position: center; /* Centers the image */
 }
 
 .cover-detail {
