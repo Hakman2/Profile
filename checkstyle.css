@@ -4200,6 +4200,43 @@ td:last-child {
  *
  *
  * ------------------------------------------------------------------- */
+footer {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 20px 10px; /* Reduced padding */
+    text-align: center;
+}
+
+footer h2 {
+    font-size: 1.5rem; /* Adjusted font size */
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+footer p {
+    font-size: 0.9rem; /* Adjusted font size */
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+footer .social-list {
+    margin-top: 10px; /* Reduced spacing */
+}
+
+footer .social-list a {
+    font-size: 1.2rem; /* Adjusted icon size */
+}
+
+footer .s-footer__buttons {
+    margin-top: 15px; /* Reduced spacing */
+}
+
+footer .s-footer__bottom {
+    margin-top: 10px; /* Reduced spacing */
+}
+
+footer .s-footer__social {
+    margin-bottom: 10px; /* Reduced spacing */
+}
+
 .s-footer {
     --bottom-padding: var(--vspace-2_5);
     background-color: var(--color-3);
