@@ -30,3 +30,31 @@
     })();
 
 })(document.documentElement);
+
+document.addEventListener("DOMContentLoaded", function () {
+  const collectionCover = document.getElementById("collection-cover");
+  const scrollButton = document.querySelector(".js-scroll-past-cover");
+
+  // Function to adjust the height of the collection cover
+  function adjustCoverHeight() {
+    const previewWarning = document.getElementById("preview-warning");
+    const previewWarningOffset = previewWarning
+      ? previewWarning.offsetHeight
+      : 0;
+    const newHeight = window.innerHeight - previewWarningOffset;
+    collectionCover.style.height = `${newHeight}px`;
+  }
+
+  // Adjust height on page load and window resize
+  adjustCoverHeight();
+  window.addEventListener("resize", adjustCoverHeight);
+
+  // Scroll to gallery section on button click
+  scrollButton.addEventListener("click", function (e) {
+    e.preventDefault();
+    const gallerySection = document.getElementById("page-container");
+    if (gallerySection) {
+      gallerySection.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});

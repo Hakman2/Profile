@@ -6,6 +6,10 @@
     Segoe UI Symbol, Noto Color Emoji;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   /* color-1(#C73E1D)
    * color-2(#2F352B)
