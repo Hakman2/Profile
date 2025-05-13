@@ -374,6 +374,10 @@ h1,h2{
   color: #ffffffb9;
 }
 
+.color{
+  color: #fff;
+}
+
 .container .main .mainCase .businessCase {
   grid-area: business;
   max-height: 900px;
