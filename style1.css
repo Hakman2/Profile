@@ -508,6 +508,17 @@ h1, h2 {
   text-decoration: underline;
 }
 
+/* Styling for the Image in Main Section */
+.collection-cover__background-image {
+  width: 100%; /* Make the image span the full width of its container */
+  height: auto; /* Maintain the aspect ratio */
+  border-radius: 10px; /* Add rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+  margin-bottom: 20px; /* Add spacing below the image */
+  object-fit: cover; /* Ensure the image covers its container */
+  max-height: 500px; /* Limit the height for large screens */
+}
+
 /* Main Section Styling */
 .main {
   display: flex;
@@ -615,6 +626,10 @@ h1, h2 {
     font-size: 0.9rem;
     padding: 8px 15px;
   }
+
+  .collection-cover__background-image {
+    max-height: 300px; /* Reduce height for medium screens */
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -646,5 +661,9 @@ h1, h2 {
   .main button {
     font-size: 0.8rem;
     padding: 6px 10px;
+  }
+
+  .collection-cover__background-image {
+    max-height: 200px; /* Further reduce height for small screens */
   }
 }
