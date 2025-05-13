@@ -88,83 +88,84 @@ body {
 }
 
 /* Navigation Bar Enhancements */
-.busix-nav{
-  margin-top: 0;
-  top: 0;
-  display: grid;
-}
 .nav {
-  height: 80px;
-  width: 1310px;
-  position: relative;
-  box-shadow: 10px 4px 10px rgba(0, 0, 0, 0.384);
-  background-color: rgba(247, 239, 239, 0.692);
+  height: 70px;
+  width: 100%;
+  position: fixed; /* Keep the navbar fixed at the top */
+  top: 0;
+  left: 0;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+  color: white;
 }
-.nav > .other button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-.nav button,.nav a {
-  color: #272525;
-  background-color: transparent;
-  text-decoration: none;
-  padding: 10px 20px;
-  font-size: 1em;
-  border: none;
-  cursor: pointer;
-}
-.badge {
-  flex: 1;
-  text-align: left;
-  padding-left: 20px;
+
+.nav .badge h1 {
+  font-size: 1.5rem;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .search-bar-container {
-  flex: 2;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-bar-container input {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  font-size: 1rem;
+  width: 200px;
+}
+
+.search-bar-container button {
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar-container button:hover {
+  background-color: #e64a19;
 }
 
 .nav .other {
-  flex: 1;
   display: flex;
-  justify-content: flex-end;
-  gap: 15px; /* Space between buttons */
-  flex-wrap: nowrap; /* Prevent buttons from wrapping to the next line */
+  gap: 15px;
 }
 
-.nav .other a {
-  padding: 10px 15px;
-  transition: color 0.3s, transform 0.3s;
+.nav .other button {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav .other button:hover {
+  background-color: white;
   color: black;
-  text-decoration: none; /* Remove underline */
-  white-space: nowrap; /* Prevent text from wrapping */
-}
-
-.nav .other a:hover {
-  color: var(--color-1-light);
   transform: scale(1.1);
 }
 
-.nav.shrink {
-  height: 50px; /* Shrink the height */
-  transition: height 0.3s ease-in-out; /* Smooth shrinking effect */
-}
-
-.nav.shrink .badge h1 {
-  font-size: 1rem; /* Reduce font size */
-}
-
-.nav.shrink .other a {
-  font-size: 0.8rem; /* Reduce link size */
-  padding: 5px 10px; /* Adjust padding */
-}
-
-.nav.shrink .search-bar-container {
-  display: none; /* Hide search bar when shrunk */
+.nav .other a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Improved Shop Cards - Column Layout */
@@ -220,38 +221,6 @@ img {
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Widget container for buttons */
-.widget {
-  display: flex;
-  justify-content: center; /* Center the buttons */
-  align-items: center; /* Align buttons vertically */
-  gap: 15px; /* Space between buttons */
-  flex-wrap: nowrap; /* Prevent buttons from wrapping */
-  padding: 10px;
-  background-color: rgba(247, 239, 239, 0.692); /* Optional background */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
-}
-
-/* Buttons inside the widget */
-.widget button {
-  background-color: transparent;
-  border: 1px solid #272525;
-  padding: 10px 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.widget button a {
-  text-decoration: none;
-  color: #272525;
-}
-
-.widget button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: scale(1.1); /* Slight zoom effect */
-}
 
 /* Responsive adjustments for smaller screens */
 @media screen and (max-width: 1200px) {
