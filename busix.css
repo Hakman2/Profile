@@ -87,11 +87,11 @@ body {
 
 }
 
-/* Navigation Bar Enhancements */
+/* Navigation Bar */
 .nav {
   height: 70px;
   width: 100%;
-  position: fixed; /* Keep the navbar fixed at the top */
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
@@ -99,13 +99,13 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+  background-color: rgba(0, 0, 0, 0.9); /* Dark background */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   color: white;
 }
 
 .nav .badge h1 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: white;
   text-transform: uppercase;
   font-weight: bold;
@@ -168,26 +168,25 @@ body {
   color: inherit;
 }
 
-/* Improved Shop Cards - Column Layout */
+/* Container and Cards */
+.container {
+  margin-top: 100px; /* Push content below the navbar */
+  padding: 20px;
+}
+
 .busix-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  padding: 20px;
-  align-items: center;
-  margin-bottom: 100px; /* Ensuring container starts after navbar */
 }
-h1,h2{
-  color: #0a0a0ab9;
-}
-.busix-container .border-render {
+
+.border-render {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  gap: 20px;
-  width: 80%;
-  max-width: 800px;
+  text-align: center;
+  width: 250px;
   padding: 15px;
   background: #fff;
   border-radius: 10px;
@@ -195,20 +194,36 @@ h1,h2{
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.busix-container .border-render img {
-  width: 150px;
+.border-render img {
+  width: 100%;
   height: auto;
   border-radius: 10px;
 }
 
-.busix-container .border-render:hover {
+.border-render:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+.border-render h3 {
+  font-size: 1.2rem;
+  margin: 10px 0 5px;
+}
+
+.border-render small {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.border-render a {
+  text-decoration: none;
+  color: #ff5722;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.border-render a:hover {
+  color: #e64a19;
 }
 
 /* Footer Enhancements */
@@ -262,36 +277,19 @@ img {
   }
 
   .nav .other {
-    justify-content: center; /* Center the buttons */
-    gap: 10px; /* Adjust spacing for smaller screens */
+    justify-content: center;
+    gap: 10px;
   }
 
-  .nav .other a {
-    font-size: 0.9rem; /* Adjust font size for smaller screens */
-    padding: 8px 12px; /* Adjust padding for smaller screens */
+  .busix-container {
+    gap: 15px;
   }
 
-  .busix-container .border-render {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .busix-container .border-render img {
-    width: 100px;
-  }
-
-  .widget {
-    gap: 10px; /* Reduce spacing */
-  }
-
-  .widget button {
-    padding: 8px 15px; /* Adjust padding */
-    font-size: 0.9rem; /* Adjust font size */
+  .border-render {
+    width: 90%;
   }
 }
 
-/* For screens smaller than 480px */
 @media screen and (max-width: 480px) {
   .nav {
     padding: 5px;
@@ -299,6 +297,10 @@ img {
 
   .nav .badge h1 {
     font-size: 1.2rem;
+  }
+
+  .search-bar-container input {
+    width: 100%;
   }
 
   .nav .other {
@@ -318,6 +320,10 @@ img {
   .busix-container .border-render {
     width: 100%;
     padding: 10px;
+  }
+
+  .border-render {
+    width: 100%;
   }
 
   .widget {
