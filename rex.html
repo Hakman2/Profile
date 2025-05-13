@@ -4,102 +4,104 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vote </title>
-  
+  <title>Vote</title>
   <link rel="stylesheet" href="rex.css" />
 </head>
 
 <body>
-  
   <div class="container-rex">
+    <!-- Navigation -->
     <div class="nav">
       <button><a href="index.html">Home</a></button>
       <button><a href="busix.html">Business</a></button>
     </div>
+
+    <!-- Sidebar -->
     <div class="slide-bar">
-      <h2>Rex</h2>
+      <h2>Vote</h2>
       <button id="btn" onclick="loadSection('dash')">Dashboard</button>
-      <button id="btn" onclick="loadSection('active')">Active</button>
-      <button id="btn" onclick="loadSection('ask')">Ask here</button>
+      <button id="btn" onclick="loadSection('active')">Active Elections</button>
+      <button id="btn" onclick="loadSection('ask')">FAQs</button>
     </div>
 
-      <div id="app">
-        
-    <div class="default ">
-      <h1>Hello, Welcome to the Reminder</h1>
-    </div>
-  
-        <div id="Dashboard-section" class="section hidden">
-          <div class="main-content">
-            <div class="header">
-              <h1>Welcome to the Dashboard</h1>
-            </div>
-            <div class="card-container">
-              <div class="card">
-                <h3>Total Users</h3>
-                <p>1,234</p>
-              </div>
-              <div class="card">
-                <h3>Active Sessions</h3>
-                <p>567</p>
-              </div>
-              <div class="card">
-                <h3>Revenue</h3>
-                <p>$12,345</p>
-              </div>
-            </div>
+    <!-- Main Content -->
+    <div id="app">
+      <!-- Default Section -->
+      <div class="default">
+        <h1>Welcome to the GMSA Voting Platform</h1>
+        <p>Participate in elections and make your voice heard!</p>
+      </div>
+
+      <!-- Dashboard Section -->
+      <div id="Dashboard-section" class="section hidden">
+        <div class="main-content">
+          <div class="header">
+            <h1>Election Dashboard</h1>
           </div>
-        </div>
-      
-        <div id="active-section" class="section hidden">
-          <div class="main-content2">
-            <div class="header">
-              <h1>Welcome to Active</h1>
+          <div class="card-container">
+            <div class="card">
+              <h3>Total Registered Voters</h3>
+              <p>1,234</p>
             </div>
-            <div class="card-container2">
-              <div class="card1">
-                <h3>Total Users</h3>
-                <p>1,234</p>
-              </div>
-              <div class="card1">
-                <h3>Active Sessions</h3>
-                <p>567</p>
-              </div>
-              <div class="card1">
-                <h3>Revenue</h3>
-                <p>$12,345</p>
-              </div>
+            <div class="card">
+              <h3>Ongoing Elections</h3>
+              <p>2</p>
             </div>
-          </div>
-        </div>
-      
-        <div id="FQA-section" class="section hidden">
-           <div class="main-content">
-            <div class="header">
-              <h1>Welcome to the FQA Section</h1>
-            </div>
-            <div class="card-container">
-              <div class="card">
-                <h3>Total Users</h3>
-                <p>1,234</p>
-              </div>
-              <div class="card">
-                <h3>Active Sessions</h3>
-                <p>567</p>
-              </div>
-              <div class="card">
-                <h3>Revenue</h3>
-                <p>$12,345</p>
-              </div>
+            <div class="card">
+              <h3>Votes Cast</h3>
+              <p>567</p>
             </div>
           </div>
         </div>
       </div>
-      
-      
 
+      <!-- Active Elections Section -->
+      <div id="active-section" class="section hidden">
+        <div class="main-content2">
+          <div class="header">
+            <h1>Active Elections</h1>
+          </div>
+          <div class="card-container2">
+            <div class="card1">
+              <h3>Presidential Election</h3>
+              <p>Ends: May 20, 2025</p>
+              <button>Vote Now</button>
+            </div>
+            <div class="card1">
+              <h3>Secretary Election</h3>
+              <p>Ends: May 22, 2025</p>
+              <button>Vote Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <script src="rexJ.js"></script>
+      <!-- FAQs Section -->
+      <div id="FQA-section" class="section hidden">
+        <div class="main-content">
+          <div class="header">
+            <h1>Frequently Asked Questions</h1>
+          </div>
+          <div class="card-container">
+            <div class="card">
+              <h3>How do I vote?</h3>
+              <p>Click on the "Vote Now" button under the active elections section.</p>
+            </div>
+            <div class="card">
+              <h3>Who can vote?</h3>
+              <p>All registered GMSA members are eligible to vote.</p>
+            </div>
+            <div class="card">
+              <h3>Can I change my vote?</h3>
+              <p>No, votes cannot be changed once submitted.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="rexJ.js"></script>
 </body>
 
 </html>
