@@ -146,6 +146,24 @@ body {
   transform: scale(1.1);
 }
 
+.nav.shrink {
+  height: 50px; /* Shrink the height */
+  transition: height 0.3s ease-in-out; /* Smooth shrinking effect */
+}
+
+.nav.shrink .badge h1 {
+  font-size: 1rem; /* Reduce font size */
+}
+
+.nav.shrink .other a {
+  font-size: 0.8rem; /* Reduce link size */
+  padding: 5px 10px; /* Adjust padding */
+}
+
+.nav.shrink .search-bar-container {
+  display: none; /* Hide search bar when shrunk */
+}
+
 /* Improved Shop Cards - Column Layout */
 .busix-container {
   display: flex;
