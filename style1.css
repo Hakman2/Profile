@@ -422,6 +422,7 @@ h1,h2{
 }
 #collection-cover {
   position: relative;
+  width: 100%; /* Ensure the container spans the full width */
   height: 100vh; /* Full viewport height */
   display: flex;
   flex-direction: column;
@@ -429,7 +430,6 @@ h1,h2{
   align-items: center;
   text-align: center;
   color: white;
-  background-color: rgba(0, 0, 0, 0.5);
   overflow: hidden;
 }
 
@@ -437,19 +437,17 @@ h1,h2{
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
   z-index: -1;
-  overflow: hidden;
 }
 
 .collection-cover__background-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the image covers the entire container */
-  object-position: center; /* Centers the image */
+  width: 100%; /* Stretch image to full width */
+  height: 100%; /* Stretch image to full height */
+  object-fit: cover; /* Ensure the image covers the container */
+  object-position: center; /* Center the image */
 }
-
 .cover-detail {
   z-index: 1;
 }
