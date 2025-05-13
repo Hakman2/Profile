@@ -498,3 +498,65 @@ h1,h2{
 .business-name-link:hover {
   text-decoration: underline;
 }
+
+@media screen and (max-width: 1200px) {
+  .nav {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .nav .other {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .container {
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    height: auto;
+  }
+
+  .nav .badge h1 {
+    font-size: 1.5rem;
+    margin-left: 0;
+  }
+
+  .nav .other a {
+    font-size: 1rem;
+    margin-right: 0;
+  }
+
+  .main {
+    flex-direction: column;
+  }
+
+  .footer {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nav {
+    gap: 0.5em;
+  }
+
+  .nav .badge h1 {
+    font-size: 1.2rem;
+  }
+
+  .nav .other a {
+    font-size: 0.9rem;
+  }
+
+  .main {
+    padding: 5px;
+  }
+
+  .footer {
+    font-size: 0.8rem;
+  }
+}
