@@ -48,4 +48,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Trigger the resize handler on page load
   handleResize();
+
+  const searchForm = document.getElementById("search-form");
+  const searchInput = document.querySelector(".search-input");
+
+  searchForm.addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent form submission
+
+    const query = searchInput.value.trim(); // Get the search query
+    if (query) {
+      alert(`Searching for: ${query}`); // Replace with actual search logic
+      // Example: Redirect to a search results page
+      // window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+    } else {
+      alert("Please enter a search term.");
+    }
+  });
 });
