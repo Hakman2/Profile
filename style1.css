@@ -440,6 +440,7 @@ h1,h2{
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   z-index: -1;
+  margin: 0; /* Remove any margin */
 }
 
 .collection-cover__background-image {
@@ -447,7 +448,9 @@ h1,h2{
   height: 100%; /* Stretch image to full height */
   object-fit: cover; /* Ensure the image covers the container */
   object-position: center; /* Center the image */
+  margin: 0; /* Remove any margin */
 }
+
 .collection-cover__background-image::before {
   content: "";
   position: absolute;
