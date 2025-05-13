@@ -98,6 +98,22 @@
           </div>
         </div>
       </div>
+
+      <!-- Voting Form Section -->
+      <div id="vote-form-section" class="section hidden">
+        <form action="submit_vote.php" method="POST">
+          <label for="voter-name">Your Name:</label>
+          <input type="text" id="voter-name" name="voter_name" required>
+
+          <label for="candidate">Choose a Candidate:</label>
+          <select id="candidate" name="candidate" required>
+            <option value="candidate1">Candidate 1</option>
+            <option value="candidate2">Candidate 2</option>
+          </select>
+
+          <button type="submit">Submit Vote</button>
+        </form>
+      </div>
     </div>
   </div>
 
