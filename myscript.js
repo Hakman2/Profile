@@ -1,34 +1,33 @@
-(function(html) {
-    const ssPreloader = function() {
-        const siteBody = document.querySelector('body');
-        const preloader = document.querySelector('#preloader');
-        const container = document.querySelector('.container');
-        if (!preloader) return;
+(function (html) {
+  const ssPreloader = function () {
+    const siteBody = document.querySelector("body");
+    const preloader = document.querySelector("#preloader");
+    const container = document.querySelector(".container");
+    if (!preloader) return;
 
-        html.classList.add('ss-preload');
-        
-        window.addEventListener('load', function() {
-            html.classList.remove('ss-preload');
-            html.classList.add('ss-loaded');
-            
-            preloader.addEventListener('transitionend', function afterTransition(e) {
-                if (e.target.matches('#preloader'))  {
-                    siteBody.classList.add('ss-show');
-                    e.target.style.display = 'none';
-                    preloader.removeEventListener(e.type, afterTransition);
-                    container.classList.remove('hidden'); // Show the container
-                }
-            });
-        });
-    };
+    html.classList.add("ss-preload");
 
-    /* Initialize
-    * ------------------------------------------------------ */
-    (function ssInit() {
-        ssPreloader();
-        // Other initialization functions can be called here
-    })();
+    window.addEventListener("load", function () {
+      html.classList.remove("ss-preload");
+      html.classList.add("ss-loaded");
 
+      preloader.addEventListener("transitionend", function afterTransition(e) {
+        if (e.target.matches("#preloader")) {
+          siteBody.classList.add("ss-show");
+          e.target.style.display = "none";
+          preloader.removeEventListener(e.type, afterTransition);
+          container.classList.remove("hidden"); // Show the container
+        }
+      });
+    });
+  };
+
+  /* Initialize
+   * ------------------------------------------------------ */
+  (function ssInit() {
+    ssPreloader();
+    // Other initialization functions can be called here
+  })();
 })(document.documentElement);
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -53,6 +52,18 @@ document.addEventListener("DOMContentLoaded", function () {
   scrollButton.addEventListener("click", function (e) {
     e.preventDefault();
     const gallerySection = document.getElementById("page-container");
+    if (gallerySection) {
+      gallerySection.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollButton = document.querySelector(".js-scroll-past-cover");
+
+  // Smooth scroll to the gallery section
+  scrollButton.addEventListener("click", function (e) {
+    e.preventDefault();
+    const gallerySection = document.querySelector(".main"); // Adjust selector if needed
     if (gallerySection) {
       gallerySection.scrollIntoView({ behavior: "smooth" });
     }
