@@ -306,7 +306,6 @@ body {
 }
 
 .nav {
-  margin-top: 20px;
   display: flex;
   gap: 30em;
   height: 70px;
@@ -318,7 +317,9 @@ body {
   align-items: center;
   flex-wrap: wrap;
   color: #f8f8f8;
-  margin-left: 10em;
+  margin-left: 5em;
+  font-size: 12pt;
+  font-weight: 600;
 }
 
 .nav .other {
@@ -333,8 +334,7 @@ body {
   color: #f8f8f8;
   font-size: 12pt;
   margin-right: 30px;
-  border-right: 1px solid whitesmoke;
-  z-index: 2;
+  z-index: 1;
   flex-wrap: wrap;
   flex-grow: 1;
   /* margin-right: 10em; */
@@ -342,7 +342,6 @@ body {
 
 .nav .other a:is(:hover, :focus) {
   transition: 0.5s;
-  padding: 10px;
   text-decoration: underline;
 }
 
