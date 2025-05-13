@@ -51,17 +51,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const searchForm = document.getElementById("search-form");
   const searchInput = document.querySelector(".search-input");
+  const shopCards = document.querySelectorAll(".border-render");
 
   searchForm.addEventListener("submit", function (e) {
     e.preventDefault(); // Prevent form submission
 
-    const query = searchInput.value.trim(); // Get the search query
-    if (query) {
-      alert(`Searching for: ${query}`); // Replace with actual search logic
-      // Example: Redirect to a search results page
-      // window.location.href = `search.html?q=${encodeURIComponent(query)}`;
-    } else {
-      alert("Please enter a search term.");
+    const query = searchInput.value.trim().toLowerCase(); // Get the search query
+    let found = false;
+
+    shopCards.forEach((card) => {
+      const shopName = card.getAttribute("data-name").toLowerCase();
+      if (shopName.includes(query)) {
+        card.style.display = "block"; // Show matching shop
+        found = true;
+      } else {
+        card.style.display = "none"; // Hide non-matching shops
+      }
+    });
+
+    if (!found) {
+      alert("No shops found matching your search.");
+    }
+  });
+
+  // Reset the search and show all shops when the input is cleared
+  searchInput.addEventListener("input", function () {
+    if (searchInput.value.trim() === "") {
+      shopCards.forEach((card) => {
+        card.style.display = "block"; // Show all shops
+      });
     }
   });
 });
