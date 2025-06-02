@@ -132,6 +132,7 @@ html {
  *         <div></div>
  *     </div>
  * </div>
+ 
  *
  * - loader class:
  * <dots-fade | dots-jump | dots-pulse>
@@ -408,33 +409,34 @@ h1, h2 {
 
 #collection-cover {
   position: relative;
-  width: 100%; /* Ensure the container spans the full width */
-  height: 100vh; /* Full viewport height */
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
   color: white;
   overflow: hidden;
+  background: none;
 }
 
 .collection-cover__image-container {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
+  width: 100vw;
+  height: 100%;
   z-index: -1;
-  margin: 0; /* Remove any margin */
 }
 
 .collection-cover__background-image {
-  width: 100%; /* Stretch image to full width */
-  height: 100%; /* Stretch image to full height */
-  object-fit: cover; /* Ensure the image covers the container */
-  object-position: center; /* Center the image */
-  margin: 0; /* Remove any margin */
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  margin: 0;
+  display: block;
 }
 
 .collection-cover__background-image::before {
