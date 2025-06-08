@@ -524,6 +524,8 @@ h1, h2 {
 
 /* Main Section Styling */
 .main {
+  width: min(92%, 1280px); /* Same as .row in footer */
+  margin: 20px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -534,8 +536,7 @@ h1, h2 {
   color: white; /* Text color */
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
-  margin: 20px auto; /* Center the section */
-  max-width: 1200px; /* Limit the width */
+  max-width: 1280px;
 }
 
 .main h1 {
@@ -750,5 +751,31 @@ h1, h2 {
   .collection-cover__scroll-button {
     font-size: 0.8rem;
     padding: 8px 10px;
+  }
+}
+
+/* Make .main width match the footer's max width */
+.main {
+  width: min(92%, 1280px); /* Same as .row in footer */
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  max-width: 1280px;
+}
+
+/* Responsive: keep .main and footer aligned on smaller screens */
+@media screen and (max-width: 1300px) {
+  .main {
+    width: 96%;
+    max-width: 100%;
+    padding: 30px 10px;
   }
 }
