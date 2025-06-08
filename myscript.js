@@ -21,6 +21,14 @@
       });
     });
   };
+  // Auto-scroll carousel every 3 seconds
+  const carousel = document.querySelector(".carousel");
+  const items = document.querySelectorAll(".carousel-item");
+  let index = 0;
+  setInterval(() => {
+    index = (index + 1) % items.length;
+    items[index].scrollIntoView({ behavior: "smooth", inline: "center" });
+  }, 3000);
 
   /* Initialize
    * ------------------------------------------------------ */
