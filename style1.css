@@ -578,6 +578,7 @@ h1, h2 {
 .carousel {
   display: flex;
   overflow-x: auto;
+  overflow-y: hidden; /* Prevent vertical scroll */
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   background: #f5f5f5;
@@ -586,6 +587,10 @@ h1, h2 {
   padding: 24px 0;
   margin: 40px auto;
   max-width: 700px;
+  scrollbar-width: none; /* Firefox */
+}
+.carousel::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 .carousel-item {
   scroll-snap-align: center;

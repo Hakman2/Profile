@@ -218,14 +218,36 @@
 </footer>
  <script src="myscript.js"></script>
  <script>
-  // Auto-scroll carousel every 3 seconds
+  // Auto-scroll carousel every 3 seconds and highlight active marker
   const carousel = document.querySelector('.carousel');
   const items = document.querySelectorAll('.carousel-item');
+  const markers = document.querySelectorAll('.marker');
   let index = 0;
+
+  function updateMarkers(idx) {
+    markers.forEach((marker, i) => {
+      marker.style.background = i === idx ? '#333' : '#bbb';
+    });
+  }
+
   setInterval(() => {
     index = (index + 1) % items.length;
     items[index].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+    updateMarkers(index);
   }, 3000);
+
+  // Allow clicking markers to jump to slides
+  markers.forEach((marker, i) => {
+    marker.addEventListener('click', (e) => {
+      e.preventDefault();
+      index = i;
+      items[index].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+      updateMarkers(index);
+    });
+  });
+
+  // Set initial marker
+  updateMarkers(index);
 </script>
 </body>
 
