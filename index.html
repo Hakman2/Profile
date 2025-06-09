@@ -219,43 +219,41 @@
  <script src="myscript.js"></script>
  <script>
    function initializeCarouselNavigation() {
-     const carousel = document.querySelector('.carousel');
-     const items = document.querySelectorAll('.carousel-item');
-     const markers = document.querySelectorAll('.marker');
-     let index = 0;
- 
-     function updateMarkers(idx) {
-       markers.forEach((marker, i) => {
-         marker.style.background = i === idx ? '#333' : '#bbb';
-       });
-     }
- 
-     // Allow clicking markers to jump to slides
-     markers.forEach((marker, i) => {
-       marker.addEventListener('click', (e) => {
-         e.preventDefault();
-         index = i;
-         items[index].scrollIntoView({ behavior: 'smooth', inline: 'center' });
-         updateMarkers(index);
-       });
-     });
- 
-     // Keyboard navigation: left/right arrow keys
-     document.addEventListener('keydown', (e) => {
-       if (e.key === 'ArrowRight') {
-         index = (index + 1) % items.length;
-         items[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-         updateMarkers(index);
-       } else if (e.key === 'ArrowLeft') {
-         index = (index - 1 + items.length) % items.length;
-         items[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-         updateMarkers(index);
-       }
-     });
- 
-     // Set initial marker
-     updateMarkers(index);
-   }
+  const carousel = document.querySelector('.carousel');
+  const items = document.querySelectorAll('.carousel-item');
+  const markers = document.querySelectorAll('.marker');
+  let index = 0;
+
+  function updateMarkers(idx) {
+    markers.forEach((marker, i) => {
+      marker.style.background = i === idx ? '#333' : '#bbb';
+    });
+  }
+
+  // Only manual navigation:
+  markers.forEach((marker, i) => {
+    marker.addEventListener('click', (e) => {
+      e.preventDefault();
+      index = i;
+      items[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      updateMarkers(index);
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') {
+      index = (index + 1) % items.length;
+      items[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      updateMarkers(index);
+    } else if (e.key === 'ArrowLeft') {
+      index = (index - 1 + items.length) % items.length;
+      items[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      updateMarkers(index);
+    }
+  });
+
+  updateMarkers(index);
+}
  
    // To manually initialize later, just call:
    // initializeCarouselNavigation();
