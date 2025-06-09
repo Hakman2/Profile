@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const positionsContainer = document.getElementById("positions-container");
   let candidates = {}; // { position: [name, ...] }
   let votes = {}; // { position: { name: count } }
+  let votedPositions = {}; // Track if user has voted per position (frontend only)
+  const voteMessage = document.getElementById("vote-message");
 
   // Add candidate to UI and data
   function addCandidate(position, name) {
@@ -25,11 +27,22 @@ document.addEventListener("DOMContentLoaded", function () {
       candidates[position].forEach((name) => {
         const btn = document.createElement("button");
         btn.textContent = `Vote for ${name} (${votes[position][name]})`;
+        btn.disabled = !!votedPositions[position];
         btn.onclick = function () {
+          if (votedPositions[position]) {
+            voteMessage.textContent =
+              "You have already voted for this position.";
+            voteMessage.style.color = "red";
+            return;
+          }
           votes[position][name]++;
-          btn.textContent = `Vote for ${name} (${votes[position][name]})`;
-          btn.classList.add("voted");
-          setTimeout(() => btn.classList.remove("voted"), 800);
+          votedPositions[position] = true;
+          voteMessage.textContent = `Thank you! Your vote for "${name}" as "${position}" has been recorded.`;
+          voteMessage.style.color = "green";
+          renderPositions();
+          setTimeout(() => {
+            voteMessage.textContent = "";
+          }, 3000);
         };
         section.appendChild(btn);
       });
