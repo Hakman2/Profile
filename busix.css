@@ -372,8 +372,8 @@ body {
   align-items: center;
   cursor: pointer;
   z-index: 1100;
-  margin-right: 100px;
   border-radius: 50%;
+  margin-left: 40px;
   transition: background 0.2s;
   padding: 6px;
   background: none;
