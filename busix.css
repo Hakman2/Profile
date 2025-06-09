@@ -376,7 +376,7 @@ body {
   padding: 6px;
   background: none;
   border: none;
-  margin-left: 45px;
+  margin-left: 10px;
 }
 .hamburger:focus, .hamburger:hover {
   background: rgba(255,255,255,0.08);
