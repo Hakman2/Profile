@@ -77,3 +77,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+// Prevent mouse wheel and touchpad from scrolling the carousel
+document.addEventListener("DOMContentLoaded", function () {
+  const carousel = document.querySelector(".carousel");
+  if (carousel) {
+    carousel.addEventListener(
+      "wheel",
+      function (e) {
+        e.preventDefault();
+      },
+      { passive: false }
+    );
+    carousel.addEventListener(
+      "touchmove",
+      function (e) {
+        e.preventDefault();
+      },
+      { passive: false }
+    );
+  }
+});
