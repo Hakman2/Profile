@@ -85,36 +85,38 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Hamburger menu logic for responsive nav
-  document.addEventListener("DOMContentLoaded", function () {
-    const hamburger = document.getElementById("hamburger-menu");
-    const navMenu = document.getElementById("nav-menu");
-    navMenu.classList.add("open"); // or similar
+  const hamburger = document.getElementById("hamburger-menu");
+  const navMenu = document.getElementById("nav-menu");
 
-    function closeMenu() {
-      navMenu.classList.remove("open");
-      hamburger.setAttribute("aria-expanded", "false");
-    }
+  function closeMenu() {
+    navMenu.classList.remove("open");
+    hamburger.setAttribute("aria-expanded", "false");
+  }
 
-    // Open/close on click
-    hamburger.addEventListener("click", function () {
-      navMenu.classList.toggle("open");
-    });
-
-    // Close when selecting a link
-    navMenu.addEventListener("click", function (e) {
-      if (e.target.tagName === "A") {
-        closeMenu();
-      }
-    });
-
-    // Close when clicking outside
-    document.addEventListener("click", function (e) {
-      if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
-        closeMenu();
-      }
-    });
-
-    // Optional: close on resize for mobile
-    window.addEventListener("resize", closeMenu);
+  // Open/close on click
+  hamburger.addEventListener("click", function (e) {
+    e.stopPropagation();
+    navMenu.classList.toggle("open");
+    hamburger.setAttribute(
+      "aria-expanded",
+      navMenu.classList.contains("open") ? "true" : "false"
+    );
   });
+
+  // Close when selecting a link
+  navMenu.addEventListener("click", function (e) {
+    if (e.target.tagName === "A") {
+      closeMenu();
+    }
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", function (e) {
+    if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // Optional: close on resize for mobile
+  window.addEventListener("resize", closeMenu);
 });
