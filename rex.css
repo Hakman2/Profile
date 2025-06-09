@@ -185,3 +185,10 @@ button.voted {
     padding: 0.7rem 0.7rem;
   }
 }
+
+.hamburger:hover + .nav-menu,
+.nav-menu:hover {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
