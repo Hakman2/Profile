@@ -98,6 +98,50 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// Hamburger menu logic
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.getElementById("hamburger-menu");
+  const navMenu = document.getElementById("nav-menu");
+
+  function closeMenu() {
+    navMenu.classList.remove("open");
+    hamburger.setAttribute("aria-expanded", "false");
+  }
+
+  hamburger.addEventListener("click", function (e) {
+    e.stopPropagation();
+    navMenu.classList.toggle("open");
+    hamburger.setAttribute(
+      "aria-expanded",
+      navMenu.classList.contains("open") ? "true" : "false"
+    );
+  });
+
+  hamburger.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" || e.key === " ") {
+      navMenu.classList.toggle("open");
+      hamburger.setAttribute(
+        "aria-expanded",
+        navMenu.classList.contains("open") ? "true" : "false"
+      );
+    }
+  });
+
+  navMenu.addEventListener("click", function (e) {
+    if (e.target.tagName === "A") {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  window.addEventListener("resize", closeMenu);
+});
+
 // To disable scrolling
 // document.body.style.overflow = "visible";
 
