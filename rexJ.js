@@ -1,47 +1,52 @@
-// function loadSection(section) {
-//   // Hide all sections
-//   document.querySelectorAll(".section").forEach((sec) => {
-//     sec.classList.add("hidden");
-//     sec.classList.remove("visible");
-//     document.querySelector(".default").classList.add("hidden")
-//     document.querySelector(".default").classList.remove("visible")
-//   });
+let candidates = JSON.parse(localStorage.getItem("candidates")) || {};
 
-//   // Show the selected section
-//   if (section === "dash") {
-//     document.getElementById("Dashboard-section").classList.remove("hidden");
-//     document.getElementById("Dashboard-section").classList.add("visible");
-//   } else if (section === "active") {
-//     document.getElementById("active-section").classList.remove("hidden");
-//     document.getElementById("active-section").classList.add("visible");
-//   } else if (section === "ask") {
-//     document.getElementById("FQA-section").classList.remove("hidden");
-//     document.getElementById("FQA-section").classList.add("visible");
-//   }else{
-//     document.querySelector(".default").classList.remove("hidden")
-//     document.querySelector(".default").classList.add("hidden")
-//   }
-// }
-// Function to load sections dynamically
-function loadSection(section) {
-  // Hide all sections
-  const sections = document.querySelectorAll('.section');
-  sections.forEach((sec) => sec.classList.add('hidden'));
+function saveCandidates() {
+  localStorage.setItem("candidates", JSON.stringify(candidates));
+}
 
-  // Show the selected section
-  const selectedSection = document.getElementById(`${section}-section`);
-  if (selectedSection) {
-    selectedSection.classList.remove('hidden');
+function renderCandidates() {
+  const container = document.getElementById("positions-container");
+  container.innerHTML = "";
+
+  for (let position in candidates) {
+    const section = document.createElement("div");
+    section.className = "card";
+    section.innerHTML = `<h3>${position}</h3>`;
+
+    candidates[position].forEach((candidate, index) => {
+      const btn = document.createElement("button");
+      btn.textContent = `${candidate.name} - Votes: ${candidate.votes}`;
+      btn.onclick = () => {
+        candidates[position][index].votes++;
+        saveCandidates();
+        renderCandidates();
+      };
+      section.appendChild(btn);
+      section.appendChild(document.createElement("br"));
+    });
+
+    container.appendChild(section);
   }
 }
 
-// Add event listeners for buttons
-document.addEventListener('DOMContentLoaded', () => {
-  const buttons = document.querySelectorAll('#btn');
-  buttons.forEach((button) => {
-    button.addEventListener('click', (e) => {
-      const section = e.target.getAttribute('onclick').match(/'([^']+)'/)[1];
-      loadSection(section);
-    });
+// Handle admin form submission
+document
+  .getElementById("add-candidate-form")
+  .addEventListener("submit", (e) => {
+    e.preventDefault();
+    const position = document.getElementById("position").value.trim();
+    const name = document.getElementById("name").value.trim();
+
+    if (!candidates[position]) {
+      candidates[position] = [];
+    }
+
+    candidates[position].push({ name, votes: 0 });
+    saveCandidates();
+    renderCandidates();
+
+    document.getElementById("add-candidate-form").reset();
   });
-});
+
+// Initialize
+renderCandidates();
