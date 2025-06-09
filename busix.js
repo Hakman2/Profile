@@ -88,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.getElementById("hamburger-menu");
     const navMenu = document.getElementById("nav-menu");
+    navMenu.classList.add("open"); // or similar
 
     function closeMenu() {
       navMenu.classList.remove("open");
