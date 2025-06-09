@@ -393,11 +393,11 @@ body {
 .nav-menu {
   position: absolute;
   top: 70px;
-  right: 18px;
+  right: -180px;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-  display: none;
+  display: flex;
   flex-direction: column;
   min-width: 170px;
   opacity: 0;
