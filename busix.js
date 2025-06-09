@@ -96,13 +96,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Open/close on click
-    hamburger.addEventListener("click", function (e) {
-      e.stopPropagation();
+    hamburger.addEventListener("click", function () {
       navMenu.classList.toggle("open");
-      hamburger.setAttribute(
-        "aria-expanded",
-        navMenu.classList.contains("open") ? "true" : "false"
-      );
     });
 
     // Close when selecting a link
