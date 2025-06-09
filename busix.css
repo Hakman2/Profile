@@ -393,7 +393,7 @@ body {
 .nav-menu {
   position: absolute;
   top: 70px;
-  right: 18px; /* <-- Fix: menu will appear next to hamburger */
+  right: 48px; /* Shifted 30px left from the edge */
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.18);
