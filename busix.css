@@ -344,7 +344,6 @@ body {
   }
 }
 
-/* Add to busix.css or your main stylesheet */
 /* Responsive Hamburger Navigation */
 .responsive-nav {
   position: fixed;
@@ -373,11 +372,11 @@ body {
   cursor: pointer;
   z-index: 1100;
   border-radius: 50%;
-  margin-left: 40px;
   transition: background 0.2s;
   padding: 6px;
   background: none;
   border: none;
+  margin-right: 12px;
 }
 .hamburger:focus, .hamburger:hover {
   background: rgba(255,255,255,0.08);
@@ -394,9 +393,9 @@ body {
 .nav-menu {
   position: absolute;
   top: 70px;
-  right: 48px; /* Shifted 30px left from the edge */
+  right: 32px; /* Shifted from the right edge */
   background: #fff;
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.18);
   display: flex;
   flex-direction: column;
