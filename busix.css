@@ -467,10 +467,3 @@ body {
 .container, .row, .main {
   padding-top: 80px;
 }
-
-.hamburger:hover + .nav-menu,
-.nav-menu:hover {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0) scale(1);
-}
