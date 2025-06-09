@@ -244,11 +244,11 @@
      document.addEventListener('keydown', (e) => {
        if (e.key === 'ArrowRight') {
          index = (index + 1) % items.length;
-         items[index].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+         items[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
          updateMarkers(index);
        } else if (e.key === 'ArrowLeft') {
          index = (index - 1 + items.length) % items.length;
-         items[index].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+         items[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
          updateMarkers(index);
        }
      });
