@@ -108,6 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
     hamburger.setAttribute("aria-expanded", "false");
   }
 
+  // Open/close on click
   hamburger.addEventListener("click", function (e) {
     e.stopPropagation();
     navMenu.classList.toggle("open");
@@ -117,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   });
 
+  // Open/close on keyboard
   hamburger.addEventListener("keydown", function (e) {
     if (e.key === "Enter" || e.key === " ") {
       navMenu.classList.toggle("open");
@@ -127,18 +129,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // Close when selecting a link
   navMenu.addEventListener("click", function (e) {
     if (e.target.tagName === "A") {
       closeMenu();
     }
   });
 
+  // Close when clicking outside
   document.addEventListener("click", function (e) {
     if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
       closeMenu();
     }
   });
 
+  // Optional: close on resize for mobile
   window.addEventListener("resize", closeMenu);
 });
 
