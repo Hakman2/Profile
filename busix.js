@@ -104,17 +104,6 @@ document.addEventListener("DOMContentLoaded", function () {
       );
     });
 
-    // Open/close on keyboard
-    hamburger.addEventListener("keydown", function (e) {
-      if (e.key === "Enter" || e.key === " ") {
-        navMenu.classList.toggle("open");
-        hamburger.setAttribute(
-          "aria-expanded",
-          navMenu.classList.contains("open") ? "true" : "false"
-        );
-      }
-    });
-
     // Close when selecting a link
     navMenu.addEventListener("click", function (e) {
       if (e.target.tagName === "A") {
