@@ -218,7 +218,7 @@
 </footer>
  <script src="myscript.js"></script>
  <script>
-  // Auto-scroll carousel every 3 seconds and highlight active marker
+  // Remove auto-scroll, allow only manual navigation via markers or keyboard
   const carousel = document.querySelector('.carousel');
   const items = document.querySelectorAll('.carousel-item');
   const markers = document.querySelectorAll('.marker');
@@ -230,12 +230,6 @@
     });
   }
 
-  setInterval(() => {
-    index = (index + 1) % items.length;
-    items[index].scrollIntoView({ behavior: 'smooth', inline: 'center' });
-    updateMarkers(index);
-  }, 3000);
-
   // Allow clicking markers to jump to slides
   markers.forEach((marker, i) => {
     marker.addEventListener('click', (e) => {
@@ -244,6 +238,19 @@
       items[index].scrollIntoView({ behavior: 'smooth', inline: 'center' });
       updateMarkers(index);
     });
+  });
+
+  // Keyboard navigation: left/right arrow keys
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') {
+      index = (index + 1) % items.length;
+      items[index].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+      updateMarkers(index);
+    } else if (e.key === 'ArrowLeft') {
+      index = (index - 1 + items.length) % items.length;
+      items[index].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+      updateMarkers(index);
+    }
   });
 
   // Set initial marker
