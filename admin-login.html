@@ -21,13 +21,24 @@
   <script>
     document.getElementById('admin-login-form').addEventListener('submit', function(e) {
       e.preventDefault();
-      // For now, just simulate admin login success
-      const user = document.getElementById('admin-username').value.trim();
-      if(user) {
-        window.location.href = "admin.html"; // Redirect to admin dashboard (to be created)
-      } else {
-        document.getElementById('admin-login-message').textContent = "Invalid login.";
-      }
+      const username = document.getElementById('admin-username').value.trim();
+      const password = document.getElementById('admin-password').value;
+      fetch('/api/admin/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          window.location.href = "admin.html";
+        } else {
+          document.getElementById('admin-login-message').textContent = data.error || "Invalid login.";
+        }
+      })
+      .catch(() => {
+        document.getElementById('admin-login-message').textContent = "Server error.";
+      });
     });
   </script>
 </body>
