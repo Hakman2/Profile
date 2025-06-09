@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // To disable scrolling
-document.body.style.overflow = "visible";
+// document.body.style.overflow = "visible";
 
 // To re-enable scrolling (when needed)
 // document.body.style.overflow = '';
