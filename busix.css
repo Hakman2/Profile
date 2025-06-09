@@ -343,3 +343,127 @@ body {
     font-size: 0.8rem; /* Further reduce font size */
   }
 }
+
+/* Add to busix.css or your main stylesheet */
+/* Responsive Hamburger Navigation */
+.responsive-nav {
+  position: fixed;
+  top: 0; left: 0; width: 100vw;
+  z-index: 1000;
+  background: rgba(20, 20, 30, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  height: 70px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+
+.responsive-nav .badge h1 {
+  font-size: 1.8rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0;
+}
+
+.hamburger {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1100;
+  border-radius: 50%;
+  transition: background 0.2s;
+  padding: 6px;
+  background: none;
+  border: none;
+}
+.hamburger:focus, .hamburger:hover {
+  background: rgba(255,255,255,0.08);
+  outline: none;
+}
+.hamburger-icon {
+  font-size: 2.2rem;
+  color: #fff;
+  display: block;
+  line-height: 1;
+  user-select: none;
+}
+
+.nav-menu {
+  position: absolute;
+  top: 70px;
+  right: 18px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: column;
+  min-width: 170px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px) scale(0.98);
+  transition: opacity 0.25s, transform 0.25s;
+  overflow: hidden;
+}
+
+.nav-menu.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+  animation: navFadeIn 0.3s;
+}
+
+@keyframes navFadeIn {
+  from { opacity: 0; transform: translateY(-20px) scale(0.97);}
+  to   { opacity: 1; transform: translateY(0) scale(1);}
+}
+
+.nav-menu a {
+  color: #222;
+  text-decoration: none;
+  padding: 16px 28px;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.18s, color 0.18s;
+  border-radius: 0;
+  background: transparent;
+  font-family: 'Nunito', 'Segoe UI', Arial, sans-serif;
+}
+.nav-menu a:last-child {
+  border-bottom: none;
+}
+.nav-menu a:hover, .nav-menu a:focus {
+  background: #2be28622;
+  color: #1e88e5;
+  outline: none;
+}
+
+@media (max-width: 700px) {
+  .responsive-nav {
+    padding: 0 8px;
+    height: 56px;
+  }
+  .responsive-nav .badge h1 {
+    font-size: 1.1rem;
+  }
+  .nav-menu {
+    min-width: 120px;
+    top: 56px;
+    right: 8px;
+  }
+  .nav-menu a {
+    font-size: 1rem;
+    padding: 12px 18px;
+  }
+}
+
+/* Hide original nav .other for mobile/hamburger */
+.nav .other {
+  display: none !important;
+}
+
+/* Add padding to main content so it's not hidden behind nav */
+.container, .row, .main {
+  padding-top: 80px;
+}
