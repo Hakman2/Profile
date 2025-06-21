@@ -1,7 +1,8 @@
 (function (html) {
+  // Preloader logic
   const ssPreloader = function () {
-    const siteBody = document.querySelector("body");
-    const preloader = document.querySelector("#preloader");
+    const siteBody = document.body;
+    const preloader = document.getElementById("preloader");
     const container = document.querySelector(".busix-nav");
     if (!preloader) return;
 
@@ -16,14 +17,13 @@
           siteBody.classList.add("ss-show");
           e.target.style.display = "none";
           preloader.removeEventListener(e.type, afterTransition);
-          container.classList.remove("hidden"); // Show the container
+          if (container) container.classList.remove("hidden");
         }
       });
     });
   };
 
-  /* Initialize
-   * ------------------------------------------------------ */
+  // Initialize
   (function ssInit() {
     ssPreloader();
     // Other initialization functions can be called here
@@ -31,92 +31,84 @@
 })(document.documentElement);
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Responsive nav shrink on resize
   const nav = document.querySelector(".nav");
-
-  // Function to shrink the navigation bar on window resize
   function handleResize() {
-    if (window.innerWidth < 800) {
-      // Adjust the width threshold as needed
-      nav.classList.add("shrink");
-    } else {
-      nav.classList.remove("shrink");
+    if (nav) {
+      if (window.innerWidth < 800) {
+        nav.classList.add("shrink");
+      } else {
+        nav.classList.remove("shrink");
+      }
     }
   }
-
-  // Listen for the resize event
   window.addEventListener("resize", handleResize);
-
-  // Trigger the resize handler on page load
   handleResize();
 
+  // Search logic
   const searchForm = document.getElementById("search-form");
   const searchInput = document.querySelector(".search-input");
   const shopCards = document.querySelectorAll(".border-render");
 
-  // Handle search form submission
-  searchForm.addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent form submission
-
-    const query = searchInput.value.trim().toLowerCase(); // Get the search query
-    let found = false;
-
-    shopCards.forEach((card) => {
-      const shopName = card.getAttribute("data-name").toLowerCase();
-      if (shopName.includes(query)) {
-        card.style.display = "block"; // Show matching shop
-        found = true;
-      } else {
-        card.style.display = "none"; // Hide non-matching shops
-      }
+  if (searchForm && searchInput && shopCards.length) {
+    searchForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const query = searchInput.value.trim().toLowerCase();
+      let found = false;
+      shopCards.forEach((card) => {
+        const shopName = card.getAttribute("data-name").toLowerCase();
+        if (shopName.includes(query)) {
+          card.style.display = "block";
+          found = true;
+        } else {
+          card.style.display = "none";
+        }
+      });
+      if (!found) alert("No shops found matching your search.");
     });
 
-    if (!found) {
-      alert("No shops found matching your search.");
-    }
-  });
+    searchInput.addEventListener("input", function () {
+      if (searchInput.value.trim() === "") {
+        shopCards.forEach((card) => {
+          card.style.display = "block";
+        });
+      }
+    });
+  }
 
-  // Reset the search and show all shops when the input is cleared
-  searchInput.addEventListener("input", function () {
-    if (searchInput.value.trim() === "") {
-      shopCards.forEach((card) => {
-        card.style.display = "block"; // Show all shops
-      });
-    }
-  });
-
-  // Hamburger menu logic for responsive nav
+  // Hamburger menu logic
   const hamburger = document.getElementById("hamburger-menu");
   const navMenu = document.getElementById("nav-menu");
 
   function closeMenu() {
-    navMenu.classList.remove("open");
-    hamburger.setAttribute("aria-expanded", "false");
+    if (navMenu && hamburger) {
+      navMenu.classList.remove("open");
+      hamburger.setAttribute("aria-expanded", "false");
+    }
   }
 
-  // Open/close on click
-  hamburger.addEventListener("click", function (e) {
-    e.stopPropagation();
-    navMenu.classList.toggle("open");
-    hamburger.setAttribute(
-      "aria-expanded",
-      navMenu.classList.contains("open") ? "true" : "false"
-    );
-  });
+  if (hamburger && navMenu) {
+    hamburger.addEventListener("click", function (e) {
+      e.stopPropagation();
+      navMenu.classList.toggle("open");
+      hamburger.setAttribute(
+        "aria-expanded",
+        navMenu.classList.contains("open") ? "true" : "false"
+      );
+    });
 
-  // Close when selecting a link
-  navMenu.addEventListener("click", function (e) {
-    if (e.target.tagName === "A") {
-      closeMenu();
-    }
-  });
+    navMenu.addEventListener("click", function (e) {
+      if (e.target.tagName === "A") {
+        closeMenu();
+      }
+    });
 
-  // Close when clicking outside
-  document.addEventListener("click", function (e) {
-    if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
-      closeMenu();
-    }
-  });
+    document.addEventListener("click", function (e) {
+      if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+        closeMenu();
+      }
+    });
 
-  // Optional: close on resize for mobile
-  window.addEventListener("resize", closeMenu);
+    window.addEventListener("resize", closeMenu);
+  }
 });
