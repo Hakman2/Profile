@@ -50,14 +50,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const searchInput = document.querySelector(".search-input");
   const shopCards = document.querySelectorAll(".border-render");
 
-  const showAllCards = () => {
+  function showAllCards() {
     shopCards.forEach((card) => (card.style.display = "block"));
-  };
+  }
 
-  const filterCards = (query) => {
+  function filterCards(query) {
     let found = false;
     shopCards.forEach((card) => {
-      const shopName = card.dataset.name.toLowerCase();
+      const shopName = (card.dataset.name || "").toLowerCase();
       if (shopName.includes(query)) {
         card.style.display = "block";
         found = true;
@@ -65,18 +65,26 @@ document.addEventListener("DOMContentLoaded", function () {
         card.style.display = "none";
       }
     });
-    if (!found) alert("No shops found matching your search.");
-  };
+    if (!found) {
+      // Optionally show a message or handle "not found"
+    }
+  }
 
   if (searchForm && searchInput && shopCards.length) {
-    searchForm.addEventListener("submit", (e) => {
+    searchForm.addEventListener("submit", function (e) {
       e.preventDefault();
       const query = searchInput.value.trim().toLowerCase();
-      filterCards(query);
+      if (query === "") {
+        showAllCards();
+      } else {
+        filterCards(query);
+      }
     });
 
-    searchInput.addEventListener("input", () => {
-      if (searchInput.value.trim() === "") showAllCards();
+    searchInput.addEventListener("input", function () {
+      if (searchInput.value.trim() === "") {
+        showAllCards();
+      }
     });
   }
 
