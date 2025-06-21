@@ -45,20 +45,18 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", handleResize);
   handleResize();
 
- // Wait for the DOM to be fully loaded
-document.addEventListener("DOMContentLoaded", () => {
   // Search Logic
   const searchForm = document.getElementById("search-form");
   const searchInput = document.querySelector(".search-input");
   const shopCards = document.querySelectorAll(".border-render");
 
   const showAllCards = () => {
-    shopCards.forEach(card => (card.style.display = "block"));
+    shopCards.forEach((card) => (card.style.display = "block"));
   };
 
   const filterCards = (query) => {
     let found = false;
-    shopCards.forEach(card => {
+    shopCards.forEach((card) => {
       const shopName = card.dataset.name.toLowerCase();
       if (shopName.includes(query)) {
         card.style.display = "block";
@@ -71,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   if (searchForm && searchInput && shopCards.length) {
-    searchForm.addEventListener("submit", e => {
+    searchForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const query = searchInput.value.trim().toLowerCase();
       filterCards(query);
@@ -86,23 +84,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.getElementById("hamburger-menu");
   const navMenu = document.getElementById("nav-menu");
 
-  const closeMenu = () => {
-    navMenu?.classList.remove("open");
-    hamburger?.setAttribute("aria-expanded", "false");
-  };
+  function closeMenu() {
+    if (navMenu && hamburger) {
+      navMenu.classList.remove("open");
+      hamburger.setAttribute("aria-expanded", "false");
+    }
+  }
 
   if (hamburger && navMenu) {
-    hamburger.addEventListener("click", e => {
+    hamburger.addEventListener("click", (e) => {
       e.stopPropagation();
       const isOpen = navMenu.classList.toggle("open");
       hamburger.setAttribute("aria-expanded", isOpen.toString());
     });
 
-    navMenu.addEventListener("click", e => {
+    navMenu.addEventListener("click", (e) => {
       if (e.target.tagName === "A") closeMenu();
     });
 
-    document.addEventListener("click", e => {
+    document.addEventListener("click", (e) => {
       if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
         closeMenu();
       }
