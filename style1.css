@@ -462,7 +462,8 @@ h1, h2 {
 }
 
 #centerlize{
-  margin-left: 15rem;
+  margin-left: 10rem;
+  color: #d4d6d4;
 }
 /* About section styles */
 .about {
