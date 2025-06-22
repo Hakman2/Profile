@@ -461,6 +461,9 @@ h1, h2 {
   overflow: hidden;
 }
 
+#centerlize{
+  margin-left: 10px;
+}
 /* About section styles */
 .about {
   width: 100vw;           /* Full viewport width */
