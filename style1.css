@@ -463,6 +463,7 @@ h1, h2 {
 
 #centerlize{
   margin-left: 10rem;
+  display: flex;
   color: #d4d6d4;
 }
 /* About section styles */
