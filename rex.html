@@ -1,52 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Voting System</title>
-  <link rel="stylesheet" href="rex.css" />
-</head>
-<body>
-  <nav class="nav responsive-nav">
-    <div class="badge">
-      <h1><i><u>Voting</u></i></h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voting System</title>
+    <link rel="stylesheet" href="rex.css" />
+  </head>
+  <body>
+    <nav class="nav responsive-nav">
+      <div class="badge">
+        <h1>
+          <i><u>Voting</u></i>
+        </h1>
+      </div>
+      <div
+        class="hamburger"
+        id="hamburger-menu"
+        tabindex="0"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        <span class="hamburger-icon">&#9776;</span>
+      </div>
+      <div class="nav-menu" id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="busix.html">Business</a>
+        <a href="rex.html">Reminder</a>
+        <a href="xhx.html">Chatroom</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>Voting System</h1>
+
+      <div class="admin-panel">
+        <h2>Admin: Add Candidate</h2>
+        <form id="add-candidate-form" autocomplete="off">
+          <label for="position">Position</label>
+          <input
+            type="text"
+            id="position"
+            placeholder="Position (e.g., President)"
+            maxlength="50"
+            required
+          />
+
+          <label for="name">Candidate Name</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Candidate Name"
+            maxlength="50"
+            required
+          />
+
+          <button type="submit">Add Candidate</button>
+          <span id="form-message" aria-live="polite"></span>
+        </form>
+        <button id="clear-votes-btn" type="button">Clear All Votes</button>
+      </div>
+
+      <div class="voting-section" id="voting-section">
+        <h2>Vote for Candidates</h2>
+        <div id="positions-container"></div>
+      </div>
+      <span id="vote-message" aria-live="polite"></span>
     </div>
-    <div class="hamburger" id="hamburger-menu" tabindex="0" aria-label="Open navigation" aria-expanded="false">
-      <span class="hamburger-icon">&#9776;</span>
-    </div>
-    <div class="nav-menu" id="nav-menu">
-      <a href="index.html">Home</a>
-      <a href="busix.html">Business</a>
-      <a href="rex.html">Reminder</a>
-      <a href="xhx.html">Chatroom</a>
-    </div>
-  </nav>
 
-  <div class="container">
-    <h1>Voting System</h1>
-
-    <div class="admin-panel">
-      <h2>Admin: Add Candidate</h2>
-      <form id="add-candidate-form" autocomplete="off">
-        <label for="position">Position</label>
-        <input type="text" id="position" placeholder="Position (e.g., President)" maxlength="50" required />
-
-        <label for="name">Candidate Name</label>
-        <input type="text" id="name" placeholder="Candidate Name" maxlength="50" required />
-
-        <button type="submit">Add Candidate</button>
-        <span id="form-message" aria-live="polite"></span>
-      </form>
-    </div>
-
-    <div class="voting-section" id="voting-section">
-      <h2>Vote for Candidates</h2>
-      <div id="positions-container"></div>
-    </div>
-    <span id="vote-message" aria-live="polite"></span>
-  </div>
-
-  <script src="rex.js"></script>
-  <script src="rexJ.js"></script>
-</body>
+    <script src="rex.js"></script>
+    <script src="rexJ.js"></script>
+  </body>
 </html>
