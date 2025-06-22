@@ -36,7 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
           }
           votes[position][name]++;
+          saveVotes();
           votedPositions[position] = true;
+          saveVotedPositions();
           voteMessage.textContent = `Thank you! Your vote for "${name}" as "${position}" has been recorded.`;
           voteMessage.style.color = "green";
           renderPositions();
@@ -58,13 +60,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const name = document.getElementById("name").value.trim();
     if (!position || !name) return;
     addCandidate(position, name);
+    saveCandidates();
+    saveVotes();
     form.reset();
   });
 
   document.getElementById("clear-votes-btn").onclick = function () {
     localStorage.removeItem("votedPositions");
+    localStorage.removeItem("votes");
     votedPositions = {};
-    renderCandidates();
+    votes = {};
+    renderPositions();
     document.getElementById("vote-message").textContent = "All votes cleared!";
     setTimeout(() => {
       document.getElementById("vote-message").textContent = "";
