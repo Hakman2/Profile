@@ -1,14 +1,21 @@
 let candidates = JSON.parse(localStorage.getItem("candidates")) || {};
+// Track which positions the user has voted for (by position name)
+let votedPositions = JSON.parse(localStorage.getItem("votedPositions")) || {};
 
 function saveCandidates() {
   localStorage.setItem("candidates", JSON.stringify(candidates));
+}
+
+// Save voted positions to localStorage
+function saveVotedPositions() {
+  localStorage.setItem("votedPositions", JSON.stringify(votedPositions));
 }
 
 function renderCandidates() {
   const container = document.getElementById("positions-container");
   container.innerHTML = "";
 
-  for (let position in candidates) {
+  Object.keys(candidates).forEach((position) => {
     const section = document.createElement("div");
     section.className = "card";
     section.innerHTML = `<h3>${position}</h3>`;
@@ -23,10 +30,32 @@ function renderCandidates() {
       };
       section.appendChild(btn);
       section.appendChild(document.createElement("br"));
+
+      const voteBtn = document.createElement("button");
+      voteBtn.textContent = `Vote for ${candidate.name}`;
+      // Disable button if already voted for this position
+      voteBtn.disabled = !!votedPositions[position];
+      voteBtn.onclick = function () {
+        if (votedPositions[position]) {
+          document.getElementById("vote-message").textContent =
+            "You have already voted for this position.";
+          return;
+        }
+        votedPositions[position] = true;
+        saveVotedPositions();
+        renderCandidates();
+        document.getElementById(
+          "vote-message"
+        ).textContent = `Thank you! Your vote for "${candidate.name}" as "${position}" has been recorded.`;
+        setTimeout(() => {
+          document.getElementById("vote-message").textContent = "";
+        }, 3000);
+      };
+      section.appendChild(voteBtn);
     });
 
     container.appendChild(section);
-  }
+  });
 }
 
 // Handle admin form submission

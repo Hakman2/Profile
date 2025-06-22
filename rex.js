@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Voting logic
   const positionsContainer = document.getElementById("positions-container");
-  let candidates = {}; // { position: [name, ...] }
-  let votes = {}; // { position: { name: count } }
-  let votedPositions = {}; // Track if user has voted per position (frontend only)
+  let candidates = JSON.parse(localStorage.getItem("candidates")) || {};
+  let votes = JSON.parse(localStorage.getItem("votes")) || {};
+  let votedPositions = JSON.parse(localStorage.getItem("votedPositions")) || {};
   const voteMessage = document.getElementById("vote-message");
 
   // Add candidate to UI and data
@@ -60,4 +60,24 @@ document.addEventListener("DOMContentLoaded", function () {
     addCandidate(position, name);
     form.reset();
   });
+
+  document.getElementById("clear-votes-btn").onclick = function () {
+    localStorage.removeItem("votedPositions");
+    votedPositions = {};
+    renderCandidates();
+    document.getElementById("vote-message").textContent = "All votes cleared!";
+    setTimeout(() => {
+      document.getElementById("vote-message").textContent = "";
+    }, 2000);
+  };
+
+  function saveCandidates() {
+    localStorage.setItem("candidates", JSON.stringify(candidates));
+  }
+  function saveVotes() {
+    localStorage.setItem("votes", JSON.stringify(votes));
+  }
+  function saveVotedPositions() {
+    localStorage.setItem("votedPositions", JSON.stringify(votedPositions));
+  }
 });
