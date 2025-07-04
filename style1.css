@@ -895,9 +895,10 @@ h2 {
 @media screen and (max-width: 1300px) {
   .nav {
     display: flex;
-    align-content: end;
-    justify-content: right;
-    margin-right: 0;
+    right: 0;
+  }
+  .hamburger-icon{
+    margin: 50px;
   }
   .main {
     width: 100vw;
