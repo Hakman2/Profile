@@ -848,7 +848,7 @@ h2 {
     margin-top: 20px;
     margin-left: 2.5rem;
   }
-  .cover-arrow .collection-cover__scroll-button {
+  .cover-detail {
     justify-content: center;
     align-items: center;
     display: flex;
