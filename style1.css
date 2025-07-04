@@ -840,20 +840,6 @@ h2 {
     font-size: 0.9rem;
     padding: 10px 15px;
   }
-
-  h4 .cover-collection-name {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    margin-left: 2.5rem;
-  }
-  .cover-detail {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    margin-right: 5rem;
-  }
 }
 
 @media screen and (max-width: 480px) {
