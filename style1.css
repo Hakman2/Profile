@@ -753,7 +753,6 @@ h2 {
   }
   .responsive-nav .badge h1 {
     font-size: 1.1rem;
-
   }
   .nav-menu {
     min-width: 120px;
@@ -841,18 +840,22 @@ h2 {
     font-size: 0.9rem;
     padding: 10px 15px;
   }
-  
-  h4 .cover-collection-name{
+
+  h4 .cover-collection-name {
     display: flex;
     top: 0;
-    left: 30px;
+    right: 30px;
+  }
+  .cover-arrow .collection-cover__scroll-button {
+    justify-content: center;
+    align-items: center;
+    display: flex;
   }
 }
 
 @media screen and (max-width: 480px) {
   .nav {
     padding: 5px;
-
   }
 
   .nav .badge h1 {
@@ -901,7 +904,6 @@ h2 {
 
 /* Responsive: keep .main and footer aligned on smaller screens */
 @media screen and (max-width: 1300px) {
-  
   .main {
     width: 100vw;
     max-width: none;
