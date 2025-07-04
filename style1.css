@@ -114,7 +114,7 @@ html {
   /* others
    */
   --color-body-bg: var(--color-gray-1);
-  --color-border: rgba(0, 0, 0, .1);
+  --color-border: rgba(0, 0, 0, 0.1);
   --border-radius: 5px;
 }
 
@@ -164,7 +164,7 @@ html {
   display: inline-block;
 }
 
-#loader>div {
+#loader > div {
   content: "";
   background: var(--color-loader);
   width: 4px;
@@ -175,25 +175,25 @@ html {
   border-radius: 50%;
 }
 
-#loader>div:nth-of-type(1) {
+#loader > div:nth-of-type(1) {
   left: 15px;
 }
 
-#loader>div:nth-of-type(3) {
+#loader > div:nth-of-type(3) {
   left: -15px;
 }
 
 /* dots jump */
-.dots-jump>div {
+.dots-jump > div {
   animation: dots-jump 1.2s infinite ease;
   animation-delay: 0.2s;
 }
 
-.dots-jump>div:nth-of-type(1) {
+.dots-jump > div:nth-of-type(1) {
   animation-delay: 0.4s;
 }
 
-.dots-jump>div:nth-of-type(3) {
+.dots-jump > div:nth-of-type(3) {
   animation-delay: 0s;
 }
 
@@ -212,16 +212,16 @@ html {
 }
 
 /* dots fade */
-.dots-fade>div {
+.dots-fade > div {
   animation: dots-fade 1.6s infinite ease;
   animation-delay: 0.4s;
 }
 
-.dots-fade>div:nth-of-type(1) {
+.dots-fade > div:nth-of-type(1) {
   animation-delay: 0.8s;
 }
 
-.dots-fade>div:nth-of-type(3) {
+.dots-fade > div:nth-of-type(3) {
   animation-delay: 0s;
 }
 
@@ -240,16 +240,16 @@ html {
 }
 
 /* dots pulse */
-.dots-pulse>div {
+.dots-pulse > div {
   animation: dots-pulse 1.2s infinite ease;
   animation-delay: 0.2s;
 }
 
-.dots-pulse>div:nth-of-type(1) {
+.dots-pulse > div:nth-of-type(1) {
   animation-delay: 0.4s;
 }
 
-.dots-pulse>div:nth-of-type(3) {
+.dots-pulse > div:nth-of-type(3) {
   animation-delay: 0s;
 }
 
@@ -373,7 +373,8 @@ header h1 {
   justify-content: center;
 }
 
-h1, h2 {
+h1,
+h2 {
   color: #ffffffb9;
 }
 
@@ -431,9 +432,9 @@ h1, h2 {
 
 .collection-cover__image-container {
   position: absolute;
-  top: 0; 
-  left: 0; 
-  width: 100%; 
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
   z-index: -1;
   margin: 0;
@@ -461,17 +462,17 @@ h1, h2 {
   overflow: hidden;
 }
 
-#centerlize{
+#centerlize {
   margin-left: 10rem;
   display: flex;
   color: #d4d6d4;
 }
 /* About section styles */
 .about {
-  width: 100vw;           /* Full viewport width */
+  width: 100vw; /* Full viewport width */
   min-width: 100vw;
-  margin: 0;              /* Remove centering */
-  border-radius: 0;       /* Remove rounded corners */
+  margin: 0; /* Remove centering */
+  border-radius: 0; /* Remove rounded corners */
   border-bottom: 2px solid #fbc02d;
   background: #fff59d;
   display: flex;
@@ -483,7 +484,7 @@ h1, h2 {
 }
 
 .about-content {
-  max-width: 700px;       /* Optional: keep text readable */
+  max-width: 700px; /* Optional: keep text readable */
   margin: 40px auto;
   text-align: center;
   color: #222;
@@ -563,12 +564,12 @@ h1, h2 {
 
 /* Main Section Styling */
 .main {
-  width: 100vw;           /* Full viewport width */
-  max-width: none;        /* Remove max width constraint */
-  margin: 0;              /* Remove auto-centering */
-  padding: 0;             /* Remove side padding */
-  border-radius: 0;       /* Remove rounded corners */
-  box-shadow: none;       /* Remove shadow if you want it flush */
+  width: 100vw; /* Full viewport width */
+  max-width: none; /* Remove max width constraint */
+  margin: 0; /* Remove auto-centering */
+  padding: 0; /* Remove side padding */
+  border-radius: 0; /* Remove rounded corners */
+  box-shadow: none; /* Remove shadow if you want it flush */
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
   display: block;
@@ -584,7 +585,7 @@ h1, h2 {
   scroll-behavior: smooth;
   background: #f5f5f5;
   border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   padding: 24px 0;
   margin: 40px auto;
   max-width: 700px;
@@ -602,7 +603,7 @@ h1, h2 {
   margin: 0 16px;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -635,14 +636,17 @@ h1, h2 {
   transition: background 0.3s;
   border: 2px solid #fff;
 }
-.marker:focus, .marker:hover {
+.marker:focus,
+.marker:hover {
   background: #333;
 }
 
 /* Responsive Hamburger Navigation */
 .responsive-nav {
   position: fixed;
-  top: 0; left: 0; width: 100vw;
+  top: 0;
+  left: 0;
+  width: 100vw;
   z-index: 1000;
   background: rgba(20, 20, 30, 0.95);
   display: flex;
@@ -650,7 +654,7 @@ h1, h2 {
   justify-content: space-between;
   padding: 0 18px;
   height: 70px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 
 .responsive-nav .badge h1 {
@@ -673,8 +677,9 @@ h1, h2 {
   border: none;
   margin-right: 30px;
 }
-.hamburger:focus, .hamburger:hover {
-  background: rgba(255,255,255,0.08);
+.hamburger:focus,
+.hamburger:hover {
+  background: rgba(255, 255, 255, 0.08);
   outline: none;
 }
 .hamburger-icon {
@@ -691,7 +696,7 @@ h1, h2 {
   right: 18px;
   background: #fff;
   border-radius: 18px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
   display: flex;
   flex-direction: column;
   min-width: 170px;
@@ -710,8 +715,14 @@ h1, h2 {
 }
 
 @keyframes navFadeIn {
-  from { opacity: 0; transform: translateY(-20px) scale(0.97);}
-  to   { opacity: 1; transform: translateY(0) scale(1);}
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .nav-menu a {
@@ -723,12 +734,13 @@ h1, h2 {
   transition: background 0.18s, color 0.18s;
   border-radius: 0;
   background: transparent;
-  font-family: 'Nunito', 'Segoe UI', Arial, sans-serif;
+  font-family: "Nunito", "Segoe UI", Arial, sans-serif;
 }
 .nav-menu a:last-child {
   border-bottom: none;
 }
-.nav-menu a:hover, .nav-menu a:focus {
+.nav-menu a:hover,
+.nav-menu a:focus {
   background: #2be28622;
   color: #1e88e5;
   outline: none;
@@ -881,6 +893,12 @@ h1, h2 {
 
 /* Responsive: keep .main and footer aligned on smaller screens */
 @media screen and (max-width: 1300px) {
+  .nav {
+    display: flex;
+    align-content: end;
+    justify-content: right;
+    margin-right: 0;
+  }
   .main {
     width: 100vw;
     max-width: none;
