@@ -843,8 +843,10 @@ h2 {
 
   h4 .cover-collection-name {
     display: flex;
-    top: 0;
-    right: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 2.5rem;
   }
   .cover-arrow .collection-cover__scroll-button {
     justify-content: center;
