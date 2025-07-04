@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #fff;
+  }
+  header {
+    padding: 16px 0;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+  }
+  .logo {
+    font-size: 2em;
+    color: #c00;
+    font-weight: bold;
+  }
+  nav {
+    margin: 16px 0;
+  }
+  nav a {
+    margin: 0 12px;
+    text-decoration: none;
+    color: #333;
+  }
+  .search-bar {
+    margin: 16px auto;
+    max-width: 400px;
+    display: flex;
+  }
+  .search-bar input {
+    flex: 1;
+    padding: 8px;
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+  }
+  .search-bar button {
+    padding: 8px 16px;
+    border-top-right-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+  }
+  .main-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f7f3ef;
+    padding: 40px 0;
+  }
+  .main-banner .banner-section {
+    margin: 0 16px;
+    text-align: center;
+  }
+  .main-banner img {
+    width: 180px;
+    height: 240px;
+    object-fit: cover;
+    background: #ddd;
+  }
+  .main-banner .center {
+    flex: 1;
+  }
+  .main-banner h1 {
+    font-size: 2em;
+    margin: 0 0 12px;
+  }
+  .main-banner button {
+    padding: 8px 24px;
+    margin-top: 12px;
+  }
+  .categories {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 40px 0;
+  }
+  .category {
+    text-align: center;
+  }
+  .category img {
+    width: 100px;
+    height: 120px;
+    object-fit: cover;
+    background: #eee;
+    border-radius: 8px;
+  }
+  .category .clearance {
+    background: #000;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+  footer {
+    background: #222;
+    color: #fff;
+    padding: 32px 0 16px;
+    font-size: 0.9em;
+  }
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 24px;
+  }
+  .footer-links div {
+    max-width: 200px;
+  }
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444;
+    padding-top: 12px;
+    font-size: 0.8em;
+  }
