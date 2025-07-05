@@ -221,6 +221,30 @@ body {
   color: #666;
   margin-bottom: 10px;
 }
+hamburger {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1100;
+  border-radius: 50%;
+  transition: background 0.2s;
+  padding: 6px;
+  background: none;
+  border: none;
+  margin-right: 30px;
+}
+.hamburger:focus,
+.hamburger:hover {
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+}
+.hamburger-icon {
+  font-size: 2.2rem;
+  color: #fff;
+  display: block;
+  line-height: 1;
+  user-select: none;
+}
 
 .border-render a {
   text-decoration: none;
