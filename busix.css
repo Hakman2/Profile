@@ -225,7 +225,7 @@ hamburger {
   display: flex;
   align-items: center;
   cursor: pointer;
-  z-index: 1100;
+  z-index: 1000;
   border-radius: 50%;
   transition: background 0.2s;
   padding: 6px;
@@ -239,7 +239,7 @@ hamburger {
   outline: none;
 }
 .hamburger-icon {
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   color: #fff;
   display: block;
   line-height: 1;
