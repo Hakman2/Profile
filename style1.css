@@ -861,6 +861,10 @@ h2 {
     padding: 5px 8px;
   }
 
+ .hamburger{
+   margin: 4rem;
+ }
+
   .main {
     padding: 0;
   }
