@@ -89,7 +89,7 @@ body {
 
 /* Navigation Bar */
 .nav {
-  height: 70px;
+  height: 100px;
   width: 100%;
   position: fixed;
   top: 0;
@@ -220,6 +220,30 @@ body {
 .border-render small {
   color: #666;
   margin-bottom: 10px;
+}
+hamburger {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000;
+  border-radius: 50%;
+  transition: background 0.2s;
+  padding: 6px;
+  background: none;
+  border: none;
+  margin-right: 30px;
+}
+.hamburger:focus,
+.hamburger:hover {
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+}
+.hamburger-icon {
+  font-size: 2.1rem;
+  color: #fff;
+  display: block;
+  line-height: 1;
+  user-select: none;
 }
 
 .border-render a {

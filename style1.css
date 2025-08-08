@@ -854,6 +854,7 @@ h2 {
 
   .nav .badge h1 {
     font-size: 1.2rem;
+    Margin-right: 2rem;
   }
 
   .nav .other a {
@@ -861,6 +862,12 @@ h2 {
     padding: 5px 8px;
   }
 
+ .hamburger{
+   margin-left: 4rem;
+ }
+. badge {
+  margin-right: 3rem;
+}
   .main {
     padding: 0;
   }
